@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@import "./userChrome-common.css";
+
+/* フォント変更 */
+* {
+    font-family: "メイリオ" !important;
+}
+
+/* ナビゲーションバー */
+#nav-bar {
+    margin-top: -24px; /* 上方向に余白をマイナス＝ウィンドウボーダーに食い込ませる */
+    z-index: 1;
+}

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@import "./userChrome-common.css";
+
+/* ツールバー */
+#nav-bar {
+    /* margin-top: -16px; */ /* 上方向に余白をマイナス＝ウィンドウボーダーに食い込ませる */
+    background-color: transparent !important;
+    z-index: 1;
+}
+
+#main-window:not([inFullscreen]) #nav-bar {
+    margin-left: 96px !important;
+}
+ 
