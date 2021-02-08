@@ -31,32 +31,14 @@ endif
 
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.cache/dein')
-    call dein#begin('~/.cache/dein')
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
 
-    call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-    call dein#add('tomasr/molokai')
-    call dein#add('cocopon/iceberg.vim')
-    call dein#add('haishanh/night-owl.vim')
-    call dein#add('gosukiwi/vim-atom-dark')
-    call dein#add('Shougo/unite.vim')
-    call dein#add('Shougo/neomru.vim')
-    call dein#add('Yggdroot/indentLine')
-    call dein#add('jiangmiao/auto-pairs')
-    call dein#add('mattn/emmet-vim')
-    call dein#add('scrooloose/nerdtree')
-    call dein#add('tpope/vim-surround')
-    call dein#add('tomtom/tcomment_vim')
-    call dein#add('Shougo/neocomplete')
-    call dein#add('Shougo/neosnippet')
-    call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('vim-airline/vim-airline')
-    call dein#add('vim-airline/vim-airline-themes')
-    " Neovim用プラグインをVimで使う場合
-    " if !has('nvim')
-    "   call dein#add('roxma/nvim-yarp')
-    "   call dein#add('roxma/vim-hug-neovim-rpc')
-    " endif
+    let g:rc_dir = expand('~/.vim/rc')
+    let s:toml = g:rc_dir . '/dein.toml'
+    let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+    call dein#load_toml(s:toml,      {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
     call dein#end()
     call dein#save_state()
