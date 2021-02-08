@@ -100,7 +100,6 @@ set nobackup
 set noundofile
 set belloff=all
 " ハードタブの可視化
-" set list listchars=tab:\¦\ 
 set list listchars=tab:\>\-
 syntax on
 autocmd colorscheme * call SetUserColor()
