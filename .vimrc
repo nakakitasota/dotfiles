@@ -141,37 +141,6 @@ imap <C-h> <BS>
 imap <C-d> <Del>
 imap <C-y> <esc>pa
 
-" 挿入モード時ステータスラインの色を変える
-" let g:hi_insert = 'hi StatusLine gui=None guifg=Black guibg=Yellow cterm=None ctermfg=White ctermbg=darkyellow'
-
-" if has('syntax')
-"     augroup InsertHook
-"         autocmd!
-"         autocmd InsertEnter * call s:StatusLine('Enter')
-"         autocmd InsertLeave * call s:StatusLine('Leave')
-"     augroup END
-" endif
-"
-" let s:slhlcmd = ''
-" function! s:StatusLine(mode)
-"     if a:mode == 'Enter'
-"         silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-"         silent exec g:hi_insert
-"     else
-"         highlight clear StatusLine
-"         silent exec s:slhlcmd
-"     endif
-" endfunction
-"
-" function! s:GetHighlight(hi)
-"     redir => hl
-"     exec 'highlight '.a:hi
-"     redir END
-"     let hl = substitute(hl, '[\r\n]', '', 'g')
-"     let hl = substitute(hl, 'xxx', '', '')
-"     return hl
-" endfunction
-
 " ------------------------------------
 " ファイルタイプ別の設定
 " ------------------------------------
