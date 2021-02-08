@@ -1,3 +1,9 @@
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'css']
+hook_add = '''
+    let g:user_emmet_leader_key=v:null
+    autocmd FileType html,css,php imap <buffer><expr><tab>
+        \ emmet#isExpandable() ? "\<plug>(emmet-expand-abbr)" :
+        \ "\<tab>"
+'''
