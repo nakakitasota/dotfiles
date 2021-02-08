@@ -11,13 +11,6 @@ endif
 " 　全角スペース
 
 " ------------------------------------
-" Platform-dependent codes
-" ------------------------------------
-" if has("win64")
-"     Windows
-" endif
-
-" ------------------------------------
 " dein.vim Plugin manager
 " ------------------------------------
 let s:dein_dir = expand('~/.cache/dein')
