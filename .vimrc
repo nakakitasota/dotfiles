@@ -71,6 +71,7 @@ endif
 " ------------------------------------
 " General
 " ------------------------------------
+set fileformats=unix,dos,mac
 set number
 set ruler
 set cursorline
