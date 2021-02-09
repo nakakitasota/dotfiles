@@ -159,3 +159,11 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Coc Extensions
+let g:coc_global_extensions = [
+      \  'coc-snippets'
+      \, ]
+
+" coc-snippets
+source ~/.vim/rc/coc-snippets.rc.vim
