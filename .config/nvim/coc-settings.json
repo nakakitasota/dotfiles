@@ -1,0 +1,8 @@
+{
+    "suggest.noselect": false,
+    "suggest.preferCompleteThanJumpPlaceholder": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "json"
+    ],
+    "python.jediEnabled": false
+}
