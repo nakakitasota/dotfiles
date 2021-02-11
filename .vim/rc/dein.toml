@@ -26,12 +26,8 @@ repo = 'Shougo/denite.nvim'
 hook_add = 'source ~/.vim/rc/denite.rc.vim'
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-    map <C-n> :NERDTreeToggle<CR>
-    " 起動時にブックマークを表示する
-    let g:NERDTreeShowBookmarks=1
-'''
+repo = 'Shougo/defx.nvim'
+hook_add = 'source ~/.vim/rc/defx.rc.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
