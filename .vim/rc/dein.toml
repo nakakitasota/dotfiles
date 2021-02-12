@@ -17,6 +17,9 @@ repo = 'gosukiwi/vim-atom-dark'
 repo = 'ntpeters/vim-better-whitespace'
 
 [[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 build = './install.sh nightly'
 hook_add = 'source ~/.vim/rc/coc.rc.vim'
