@@ -98,9 +98,6 @@ set list listchars=tab:\>\-
 syntax on
 autocmd colorscheme * call SetUserColor()
 function! SetUserColor()
-    " ビジュアルモードのマーカー色を変更
-    " hi Visual term=reverse cterm=reverse ctermfg=white ctermbg=black
-    " hi Visual ctermbg=8
     " 全角スペースと行末半角スペースの可視化
     hi ExtraWhitespace ctermbg=1 guibg=Red
     match ExtraWhitespace / \+$\|　/
@@ -110,7 +107,6 @@ function! SetUserColor()
     highlight SpecialKey ctermbg=NONE
     highlight EndOfBuffer ctermbg=NONE
     " コメント色
-    " hi Comment cterm=NONE ctermfg=4 guifg=lightblue
     hi Comment cterm=NONE
 endfunction
 
