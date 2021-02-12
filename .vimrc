@@ -42,7 +42,6 @@ if dein#check_install()
 endif
 
 filetype plugin indent on
-syntax enable
 
 " ------------------------------------
 " For Kaoriya build
@@ -95,7 +94,7 @@ set noundofile
 set belloff=all
 " ハードタブの可視化
 set list listchars=tab:\>\-
-syntax on
+syntax enable
 autocmd colorscheme * call SetUserColor()
 function! SetUserColor()
     " 背景色を無くす
