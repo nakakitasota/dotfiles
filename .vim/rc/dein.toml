@@ -20,6 +20,9 @@ repo = 'ntpeters/vim-better-whitespace'
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 build = './install.sh nightly'
 hook_add = 'source ~/.vim/rc/coc.rc.vim'
