@@ -1,13 +1,24 @@
 nnoremap <silent>sf :<C-u>Defx -search=`expand('%:p')` `expand('%:p:h')`<CR>
 
 call defx#custom#option('_', {
-    \ 'columns': 'indent:icon:icons:filename:mark',
+    \ 'columns': 'indent:icon:icons:filename:git:mark',
     \ })
 
 call defx#custom#column('icon', {
     \ 'directory_icon': '▸',
     \ 'opened_icon'   : '▾',
     \ 'root_icon'     : ' ',
+    \ })
+
+call defx#custom#column('git', 'indicators', {
+    \ 'Modified' : 'M',
+    \ 'Staged'   : '✚',
+    \ 'Untracked': '✭',
+    \ 'Renamed'  : '➜',
+    \ 'Unmerged' : '═',
+    \ 'Ignored'  : '☒',
+    \ 'Deleted'  : '✖',
+    \ 'Unknown'  : '?'
     \ })
 
 autocmd FileType defx call s:defx_my_settings()
