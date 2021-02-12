@@ -1,5 +1,15 @@
 nnoremap <silent>sf :<C-u>Defx -search=`expand('%:p')` `expand('%:p:h')`<CR>
 
+call defx#custom#option('_', {
+    \ 'columns': 'indent:icon:icons:filename:mark',
+    \ })
+
+call defx#custom#column('icon', {
+    \ 'directory_icon': '▸',
+    \ 'opened_icon'   : '▾',
+    \ 'root_icon'     : ' ',
+    \ })
+
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
     " Define mappings

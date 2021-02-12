@@ -31,6 +31,13 @@ hook_add = 'source ~/.vim/rc/denite.rc.vim'
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 hook_add = 'source ~/.vim/rc/defx.rc.vim'
+depends = ['defx-icons']
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
