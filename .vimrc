@@ -98,9 +98,6 @@ set list listchars=tab:\>\-
 syntax on
 autocmd colorscheme * call SetUserColor()
 function! SetUserColor()
-    " 全角スペースと行末半角スペースの可視化
-    hi ExtraWhitespace ctermbg=1 guibg=Red
-    match ExtraWhitespace / \+$\|　/
     " 背景色を無くす
     highlight Normal ctermbg=NONE
     highlight NonText ctermbg=NONE
