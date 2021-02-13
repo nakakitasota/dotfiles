@@ -80,6 +80,12 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+    let g:EasyMotion_leader_key = '<Space><Space>'
+'''
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = 'source ~/.vim/rc/lightline.rc.vim'
 
