@@ -1,4 +1,22 @@
 " ------------------------------------
+" Window
+" ------------------------------------
+nnoremap ss :<C-u>split<CR><C-w>w
+nnoremap sv :<C-u>vsplit<CR><C-w>w
+nnoremap sh <C-w>h
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sH <C-w>H
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap s> <C-w>>
+nnoremap s< <C-w><
+nnoremap s+ <C-w>+
+nnoremap s- <C-w>-
+
+" ------------------------------------
 " Tab
 " ------------------------------------
 nnoremap te :<C-u>tabedit<CR>
