@@ -16,6 +16,15 @@ nnoremap s< <C-w><
 nnoremap s+ <C-w>+
 nnoremap s- <C-w>-
 
+" Terminal
+tnoremap <ESC> <C-\><C-n>
+if has('nvim')
+    nnoremap st :<C-u>terminal<CR>
+    tnoremap <C-w> <C-\><C-n><C-w>
+else
+    nnoremap st :<C-u>terminal++curwin<CR>
+endif
+
 " ------------------------------------
 " Tab
 " ------------------------------------
