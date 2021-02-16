@@ -6,11 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #Path
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
+typeset -U path PATH
 case ${OSTYPE} in
     darwin*)
-        export PATH=$HOME/.nodebrew/current/bin:$PATH #nodebrew
+        path=(
+            /opt/homebrew/bin(N-/)
+            /usr/local/bin(N-/)
+            $path
+        )
         ;;
 esac
 
