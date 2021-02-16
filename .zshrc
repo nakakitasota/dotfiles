@@ -2,16 +2,16 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 #Path
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 case ${OSTYPE} in
-	darwin*)
-		export PATH=$HOME/.nodebrew/current/bin:$PATH #nodebrew
-		;;
+    darwin*)
+        export PATH=$HOME/.nodebrew/current/bin:$PATH #nodebrew
+        ;;
 esac
 
 #Ctrl+Dでログアウトしてしまうことを防ぐ
@@ -88,18 +88,18 @@ alias -g GI='| grep -ri'
 #エイリアス
 case ${OSTYPE} in
     darwin*)
-	alias ls='ls -G'
-	alias lst='ls -ltrG'
-	alias l='ls -ltrG'
-	alias la='ls -laG'
-	alias ll='ls -lG'
+        alias ls='ls -G'
+        alias lst='ls -ltrG'
+        alias l='ls -ltrG'
+        alias la='ls -laG'
+        alias ll='ls -lG'
         ;;
     linux*)
-	alias ls='ls --color=auto'
-	alias lst='ls -ltr --color=auto'
-	alias l='ls -ltr --color=auto'
-	alias la='ls -la --color=auto'
-	alias ll='ls -l --color=auto'
+        alias ls='ls --color=auto'
+        alias lst='ls -ltr --color=auto'
+        alias l='ls -ltr --color=auto'
+        alias la='ls -la --color=auto'
+        alias ll='ls -l --color=auto'
         ;;
 esac
 alias so='source'
@@ -118,14 +118,14 @@ alias diff='diff -U1'
 
 #cdの後にlsを実行
 chpwd() {
-	case ${OSTYPE} in
-		darwin*)
-			ls -ltrG
-			;;
-		linux*)
-			ls -ltr --color=auto
-			;;
-	esac
+    case ${OSTYPE} in
+        darwin*)
+            ls -ltrG
+            ;;
+        linux*)
+            ls -ltr --color=auto
+            ;;
+    esac
 }
 
 #どこからでも参照できるディレクトリパス
@@ -177,17 +177,17 @@ alias zmv='noglob zmv -W'
 
 #mkdirとcdを同時実行
 function mkcd() {
-  if [[ -d $1 ]]; then
-    echo "$1 already exists!"
-    cd $1
-  else
-    mkdir -p $1 && cd $1
-  fi
+    if [[ -d $1 ]]; then
+        echo "$1 already exists!"
+        cd $1
+    else
+        mkdir -p $1 && cd $1
+    fi
 }
 
 #色見本
 function colortest() {
-	for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo
+    for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo
 }
 
 #git設定
@@ -220,7 +220,7 @@ zle -N peco-history-selection
 
 #Ctrl-Rでpeco起動
 if builtin command -v peco > /dev/null; then
-	bindkey '^R' peco-history-selection
+    bindkey '^R' peco-history-selection
 fi
 
 #zplug設定
