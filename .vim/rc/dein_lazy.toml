@@ -14,3 +14,7 @@ on_ft = ['json']
 hook_add = '''
     let g:vim_json_syntax_conceal = 0
 '''
+
+[[plugins]]
+repo = 'PProvost/vim-ps1'
+on_ft = ['ps1']
