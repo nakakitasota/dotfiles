@@ -11,9 +11,6 @@ repo = 'cocopon/iceberg.vim'
 repo = 'haishanh/night-owl.vim'
 
 [[plugins]]
-repo = 'gosukiwi/vim-atom-dark'
-
-[[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
 
 [[plugins]]
