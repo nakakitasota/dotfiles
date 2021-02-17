@@ -9,8 +9,7 @@ Set-PSReadLineKeyHandler -Key "Ctrl+f" -Function ForwardWord
 
 $ScriptDir = $PSScriptRoot
 
-$ThemeSettings.MyThemesLocation = "${ScriptDir}\PoshThemes"
-Set-Theme Paradox-Mod
+Set-PoshPrompt -Theme $ScriptDir\PoshThemes\Paradox-Mod.omp.json
 
 function rmrf {
     <#

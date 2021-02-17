@@ -1,0 +1,84 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "root",
+                    "style": "powerline",
+                    "foreground": "yellow",
+                    "background": "#565656",
+                    "properties": {
+                        "postfix": "Admin:"
+                    }
+                },
+                {
+                    "type": "session",
+                    "style": "powerline",
+                    "foreground": "lightWhite",
+                    "background": "#565656"
+                },
+                {
+                    "type": "path",
+                    "style": "powerline",
+                    "powerline_symbol": "\uE0B0",
+                    "foreground": "lightWhite",
+                    "background": "#0087d7",
+                    "properties": {
+                        "folder_icon": "\uF115",
+                        "folder_separator_icon": "/",
+                        "style": "full"
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "powerline",
+                    "powerline_symbol": "\uE0B0",
+                    "foreground": "black",
+                    "background": "#00d686"
+                },
+                {
+                    "type": "python",
+                    "style": "powerline",
+                    "powerline_symbol": "\uE0B0",
+                    "foreground": "lightWhite",
+                    "background": "red",
+                    "properties": {
+                        "prefix": " \uE235 "
+                    }
+                },
+                {
+                    "type": "exit",
+                    "style": "powerline",
+                    "powerline_symbol": "\uE0B0",
+                    "foreground": "lightWhite",
+                    "background": "#ff8080",
+                    "properties": {
+                        "prefix": " \uE20F"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "newline"
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "green",
+                    "properties": {
+                        "prefix": "",
+                        "text": "\u276F"
+                    }
+                }
+            ]
+        }
+    ],
+    "final_space": false
+}
