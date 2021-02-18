@@ -1,13 +1,24 @@
 #Requires -RunAsAdministrator
 
 $DOTPATH = $PSScriptRoot
-$EXCLUSIONS = [string[]](".DS_Store", ".git", ".gitmodules", ".gitignore", ".travis.yml")
-$CANDIDATES = Get-ChildItem -Path $DOTPATH -Filter .??*
-$DOTFILES = $CANDIDATES | Where-Object {$_.Name -notin $EXCLUSIONS}
+$XDGPATH = Join-Path $PSScriptRoot .config
+$EXCLUSIONS = [string[]](".DS_Store", ".config", ".git", ".gitmodules", ".gitignore", ".travis.yml")
 
 function Install-Dotfiles {
+    $CANDIDATES = Get-ChildItem -Path $DOTPATH -Filter .??*
+    $DOTFILES = $CANDIDATES | Where-Object {$_.Name -notin $EXCLUSIONS}
+
     foreach ($f in $DOTFILES) {
         New-Item -ItemType SymbolicLink -Path $HOME -Value $($f.FullName) -Name $($f.Name) -Force
+    }
+}
+
+function Install-XDG {
+    $CANDIDATES = Get-ChildItem -Path $XDGPATH
+    $XDGFILES = $CANDIDATES | Where-Object {$_.Name -notin $EXCLUSIONS}
+
+    foreach ($f in $XDGFILES) {
+        New-Item -ItemType SymbolicLink -Path $HOME\.config -Value $($f.FullName) -Name $($f.Name) -Force
     }
 }
 
@@ -23,4 +34,5 @@ function Install-Etc {
 }
 
 Install-Dotfiles
+Install-XDG
 Install-Etc
