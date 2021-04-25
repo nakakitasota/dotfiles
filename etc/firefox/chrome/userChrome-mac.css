@@ -12,6 +12,10 @@
     margin-top: -20px; /* 上方向に余白をマイナス＝ウィンドウボーダーに食い込ませる */
 }
 
+.titlebar-buttonbox-container{
+    margin-bottom: -6px;
+}
+
 #TabsToolbar, #titlebar, #nav-bar, #TabsToolbar .tabbrowser-tab[selected], #PersonalToolbar{
     -moz-appearance: -moz-mac-source-list !important;
 }
