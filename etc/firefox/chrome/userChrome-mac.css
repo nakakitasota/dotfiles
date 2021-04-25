@@ -10,21 +10,18 @@
 /* ツールバー */
 #nav-bar {
     margin-top: -20px; /* 上方向に余白をマイナス＝ウィンドウボーダーに食い込ませる */
-    background-color: transparent !important;
-    z-index: 1;
 }
 
-/* .titlebar-buttonbox-container{
-  margin-bottom: -2px;
-  visibility:visible !important;
-} */
-
 #TabsToolbar, #titlebar, #nav-bar, #TabsToolbar .tabbrowser-tab[selected], #PersonalToolbar{
-    -moz-appearance: -moz-mac-vibrancy-light !important; 
+    -moz-appearance: -moz-mac-source-list !important;
 }
 
 #TabsToolbar:-moz-lwtheme-brighttext, #titlebar:-moz-lwtheme-brighttext, #nav-bar:-moz-lwtheme-brighttext, #TabsToolbar .tabbrowser-tab[selected]:-moz-lwtheme-brighttext, #PersonalToolbar:-moz-lwtheme-brighttext {
-    -moz-appearance: -moz-mac-vibrancy-dark !important; 
+    -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+}
+
+:root[OSXLionFullscreen]:not(:-moz-lwtheme) :is(#navigator-toolbox, #sidebar-box) {
+    background: none !important;
 }
 
 #main-window:not([inFullscreen]) #nav-bar {
