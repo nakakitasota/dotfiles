@@ -44,32 +44,15 @@
 }
 
 /* アドレスバー */
-#urlbar > #urlbar-background, #searchbar {
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
-}
-
-#urlbar[focused="false"] > #urlbar-background, #searchbar:focus-within {
+#urlbar:not([focused="true"]) > #urlbar-background, #searchbar {
     min-height: 24px !important;
     height: 24px !important;
     margin-top: 0px !important;
     margin-right: 0px !important;
     padding-top: 1px !important;
-}
-
-#urlbar[focused="true"] > #urlbar-background, #searchbar:focus-within {
-    background: -moz-Field !important;
-    border: 1px solid var(--toolbar-field-focus-border-color) !important;
-}
-
-#urlbar[focused="true"] > #urlbar-background:-moz-lwtheme, #searchbar:focus-within:-moz-lwtheme {
-    background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8)) !important;
-    border-color: var(--lwt-toolbar-field-focus-border-color, hsla(240,5%,5%,.25)) !important;
-}
-
-#urlbar[breakout][breakout-extend] > #urlbar-background {
-    box-shadow: 0 5px 18px rgba(0, 0, 0, .2) !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
 }
 
 #urlbar-container, #search-container {
