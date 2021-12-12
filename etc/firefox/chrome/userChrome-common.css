@@ -16,6 +16,11 @@
 }
 
 /* ナビゲーションバー */
+#navigator-toolbox:-moz-window-inactive {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
 #nav-bar {
     height: 27px !important;
 }
