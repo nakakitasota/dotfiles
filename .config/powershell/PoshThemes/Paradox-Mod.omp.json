@@ -82,12 +82,16 @@
             "alignment": "left",
             "segments": [
                 {
-                    "type": "text",
+                    "type": "exit",
                     "style": "plain",
                     "foreground": "green",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0  }}#ef5350{{ end  }}"
+                    ],
                     "properties": {
+                        "template": "\u276F",
                         "prefix": "",
-                        "text": "\u276F"
+                        "always_enabled": true
                     }
                 }
             ]
