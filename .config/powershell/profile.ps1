@@ -1,6 +1,6 @@
 Import-Module posh-git
 Import-Module oh-my-posh
-Import-Module Get-ChildItemColor
+Import-Module Terminal-Icons
 
 Set-PSReadlineOption -BellStyle None
 Set-PSReadLineOption -EditMode Emacs
