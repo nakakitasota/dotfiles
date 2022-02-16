@@ -9,6 +9,14 @@
 
 /* ナビゲーションバー */
 #nav-bar {
-    margin-top: -24px; /* 上方向に余白をマイナス＝ウィンドウボーダーに食い込ませる */
-    z-index: 1;
+    margin-top: -27px;
+    margin-right: 140px;
+    padding-left: 32px;
+    background-image: url("chrome://branding/content/icon16.png") !important;
+    background-position: 8px 4px;
+    background-repeat: no-repeat;
+}
+
+#TabsToolbar, #toolbar-menubar {
+    background-color: var(--toolbar-bgcolor);
 }
