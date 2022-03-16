@@ -1,101 +1,103 @@
 {
-    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-    "blocks": [
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
         {
-            "type": "prompt",
-            "alignment": "left",
-            "segments": [
-                {
-                    "type": "root",
-                    "style": "powerline",
-                    "foreground": "yellow",
-                    "background": "#565656",
-                    "properties": {
-                        "postfix": "Admin:"
-                    }
-                },
-                {
-                    "type": "session",
-                    "style": "powerline",
-                    "foreground": "lightWhite",
-                    "background": "#565656"
-                },
-                {
-                    "type": "path",
-                    "style": "powerline",
-                    "powerline_symbol": "\uE0B0",
-                    "foreground": "lightWhite",
-                    "background": "#0087d7",
-                    "properties": {
-                        "folder_icon": "\uF115",
-                        "folder_separator_icon": "/",
-                        "style": "full"
-                    }
-                },
-                {
-                    "type": "git",
-                    "style": "powerline",
-                    "powerline_symbol": "\uE0B0",
-                    "foreground": "black",
-                    "background": "#00d686",
-                    "background_templates": [
-                        "{{ if or (.Working.Changed) (.Staging.Changed)  }}#FFEB3B{{ end  }}",
-                        "{{ if and (gt .Ahead 0) (gt .Behind 0)  }}#FFCC80{{ end  }}",
-                        "{{ if gt .Ahead 0  }}#B388FF{{ end  }}",
-                        "{{ if gt .Behind 0  }}#B388FB{{ end  }}"
-                    ],
-                    "properties": {
-                        "display_status": true,
-                        "fetch_status": true,
-                        "fetch_stash_count": true,
-                        "fetch_upstream_icon": true,
-                        "template": "{{ .UpstreamIcon  }}{{ .HEAD  }}{{ .BranchStatus  }}{{ if .Working.Changed  }} \uF044 {{ .Working.String  }}{{ end  }}{{ if and (.Working.Changed) (.Staging.Changed)  }} |{{ end  }}{{ if .Staging.Changed  }} \uF046 {{ .Staging.String  }}{{ end  }}{{ if gt .StashCount 0  }} \uF692 {{ .StashCount  }}{{ end  }}"
-                    }
-                },
-                {
-                    "type": "python",
-                    "style": "powerline",
-                    "powerline_symbol": "\uE0B0",
-                    "foreground": "lightWhite",
-                    "background": "red",
-                    "properties": {
-                        "prefix": " \uE235 "
-                    }
-                },
-                {
-                    "type": "exit",
-                    "style": "powerline",
-                    "powerline_symbol": "\uE0B0",
-                    "foreground": "lightWhite",
-                    "background": "#ff8080",
-                    "properties": {
-                        "prefix": " \uE20F"
-                    }
-                }
-            ]
+          "background": "#565656",
+          "foreground": "yellow",
+          "properties": {
+            "template": " \uf0e7Admin:"
+          },
+          "style": "powerline",
+          "type": "root"
         },
         {
-            "type": "newline"
+          "background": "#565656",
+          "foreground": "lightWhite",
+          "properties": {
+            "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }}@{{ .HostName }} "
+          },
+          "style": "powerline",
+          "type": "session"
         },
         {
-            "type": "prompt",
-            "alignment": "left",
-            "segments": [
-                {
-                    "type": "exit",
-                    "style": "plain",
-                    "foreground": "green",
-                    "foreground_templates": [
-                        "{{ if gt .Code 0  }}#ef5350{{ end  }}"
-                    ],
-                    "properties": {
-                        "template": "\u276F",
-                        "prefix": "",
-                        "always_enabled": true
-                    }
-                }
-            ]
+          "background": "#0087d7",
+          "foreground": "lightWhite",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "folder_icon": "\uf115",
+            "folder_separator_icon": "/",
+            "style": "full",
+            "template": " {{ .Path }} "
+          },
+          "style": "powerline",
+          "type": "path"
+        },
+        {
+          "background": "#00d686",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed)  }}#FFEB3B{{ end  }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0)  }}#FFCC80{{ end  }}",
+            "{{ if gt .Ahead 0  }}#B388FF{{ end  }}",
+            "{{ if gt .Behind 0  }}#B388FB{{ end  }}"
+          ],
+          "foreground": "black",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "template": " {{ .UpstreamIcon  }}{{ .HEAD  }}{{ .BranchStatus  }}{{ if .Working.Changed  }} \uf044 {{ .Working.String  }}{{ end  }}{{ if and (.Working.Changed) (.Staging.Changed)  }} |{{ end  }}{{ if .Staging.Changed  }} \uf046 {{ .Staging.String  }}{{ end  }}{{ if gt .StashCount 0  }} \uf692 {{ .StashCount  }}{{ end  }} "
+          },
+          "style": "powerline",
+          "type": "git"
+        },
+        {
+          "background": "red",
+          "foreground": "lightWhite",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+          },
+          "style": "powerline",
+          "type": "python"
+        },
+        {
+          "background": "#ff8080",
+          "foreground": "lightWhite",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "template": " \ue20f{{ if gt .Code 0 }}\uf00d {{ .Meaning }}{{ else }}\uf42e{{ end }} "
+          },
+          "style": "powerline",
+          "type": "exit"
         }
-    ],
-    "final_space": false
+      ],
+      "type": "prompt"
+    },
+    {
+      "type": "newline"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "green",
+          "foreground_templates": [
+            "{{ if gt .Code 0  }}#ef5350{{ end  }}"
+          ],
+          "properties": {
+            "always_enabled": true,
+            "template": "\u276f "
+          },
+          "style": "plain",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 1
 }
