@@ -1,4 +1,5 @@
 user_pref("general.useragent.locale", "ja"); // Webページ表示言語
+user_pref("general.autoScroll", true); // Enable auto-scrolling
 user_pref("browser.startup.homepage", "www.google.co.jp"); // ホームページをGoogleにセット
 user_pref("browser.shell.checkDefaultBrowser", false); // 起動時に既定のブラウザを確認しない
 user_pref("browser.startup.page", 1); // 起動時に前回終了時のページを復元しない
