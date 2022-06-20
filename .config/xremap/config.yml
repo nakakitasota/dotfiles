@@ -1,0 +1,28 @@
+modmap:
+  - name: Global
+    remap:
+      CapsLock: Ctrl_R
+
+keymap:
+  - name: Emacs
+    application:
+      not:
+        - "Alacritty"
+        - "URxvt"
+        - "jetbrains-idea"
+        - "jetbrains-studio"
+    remap:
+      C_R-b: { with_mark: left }
+      C_R-f: { with_mark: right }
+      C_R-p: { with_mark: up }
+      C_R-n: { with_mark: down }
+      C_R-a: { with_mark: home }
+      C_R-e: { with_mark: end }
+      C_R-m: enter
+      C_R-j: enter
+      C_R-o: [enter, left]
+      C_R-h: [backspace, { set_mark: false }]
+      C_R-d: [delete, { set_mark: false }]
+      C_R-k: [Shift-end, C-x, { set_mark: false }]
+      C_R-space: { set_mark: true }
+      C_R-g: [esc, { set_mark: false }]
