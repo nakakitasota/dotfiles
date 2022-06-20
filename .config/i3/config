@@ -1,0 +1,8 @@
+# i3 config file (v4)
+
+set_from_resource $dpi Xft.dpi 96
+set $mod Mod4
+
+include ~/.config/i3/config.d/base.conf
+include ~/.config/i3/config.d/i3.conf
+include ~/.config/i3/config.d/local/`hostname`.conf
