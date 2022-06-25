@@ -1,6 +1,7 @@
 {
     "diagnostic.virtualText": true,
     "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.virtualTextPrefix": "    ■ ",
     "suggest.noselect": false,
     "suggest.preferCompleteThanJumpPlaceholder": true,
     "coc.preferences.formatOnSaveFiletypes": [
