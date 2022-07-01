@@ -37,14 +37,14 @@ nnoremap tn :<C-u>tabnext<CR>
 " ------------------------------------
 " Edit
 " ------------------------------------
-" ノーマルモード時Ctrl-K, Ctrl-Jで行を移動
+" Move line up/down
 nnoremap <C-k> "zdd<Up>"zP
 nnoremap <C-j> "zdd"zp
-" 複数行
+" multiple lines
 autocmd VimEnter * vnoremap <C-k> "zx<Up>"zP`[V`]
 vnoremap <C-j> "zx"zp`[V`]
 
-" 挿入モード時Emacsキーバインド
+" Use Emacs key bindings in insert mode
 imap <C-p> <Up>
 imap <C-n> <Down>
 imap <C-b> <Left>

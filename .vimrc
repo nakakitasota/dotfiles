@@ -5,10 +5,10 @@ if &compatible
 endif
 
 " ------------------------------------
-" 可視化文字表示テスト
+" Test for rendering a white space
 " ------------------------------------
-" 行末の半角スペース 
-" 　全角スペース
+" Half-width space at the end of a line 
+" 　Full-width space
 
 " ------------------------------------
 " dein.vim Plugin manager
@@ -92,19 +92,19 @@ set noswapfile
 set nobackup
 set noundofile
 set belloff=all
-" ハードタブの可視化
+" Display tabs
 set list listchars=tab:\>\-
 syntax enable
 autocmd colorscheme * call SetUserColor()
 function! SetUserColor()
-    " 背景色を無くす
+    " background
     highlight Normal ctermbg=NONE
     highlight NonText ctermbg=NONE
     highlight SpecialKey ctermbg=NONE
     highlight EndOfBuffer ctermbg=NONE
-    " コメント色
+    " comment
     hi Comment cterm=NONE
-    " 補完ウィンドウの色
+    " completion window
     hi Pmenu ctermbg=236 ctermfg=251 guibg=#3d425b guifg=#c6c8d1
     hi PmenuSbar ctermbg=236 ctermfg=NONE guibg=#3d425b guifg=NONE
     hi PmenuSel ctermbg=240 ctermfg=255 guibg=#5b6389 guifg=#eff0f4
@@ -114,9 +114,9 @@ endfunction
 colorscheme night-owl
 
 " ------------------------------------
-" ファイルタイプ別の設定
+" For specific file types
 " ------------------------------------
-" プレーンテキストの時のみ折り返しを有効にする
+" Enable wrapping in plain text
 au FileType text setlocal wrap
 
 " ------------------------------------

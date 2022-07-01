@@ -1,22 +1,20 @@
 set encoding=utf-8
 
-" メニューバーを非表示
+" Remove menu bar
 set guioptions-=m
-" ツールバーを非表示
+" Remove tool bar
 set guioptions-=T
-" 右スクロールバーを非表示
+" Remove scroll bar
 set guioptions-=r
 set guioptions-=R
-" 左スクロールバーを非表示
 set guioptions-=l
 set guioptions-=L
-" 下スクロールバーを非表示
 set guioptions-=b
 
-" カラースキーム
+" colorscheme
 colorscheme night-owl
 
-" フォント変更
+" font
 if has("win64")
     set guifont=HackgenNerd\ Console:h12
 elseif has("mac")
@@ -25,7 +23,7 @@ elseif has("linux")
     set guifont=HackgenNerd\ Console\ 14
 endif
 
-" IME制御:全モードにおいてOFFに固定
+" input method control
 set imsearch=0
 set iminsert=0
 if !has("win64")
@@ -34,13 +32,13 @@ if !has("win64")
     endif
 endif
 
-" IMの状態に応じてカーソルの色を変える
+" Change cursor color according to IM status
 if has('xim') || has('multi_byte_ime')
     highlight Cursor guifg=NONE guibg=Green
     highlight CursorIM guifg=NONE guibg=Red
 endif
 
-" 透過設定
+" transparency
 function! TransparencyToggle()
     if has("mac")
         if &transparency == 0
@@ -56,12 +54,12 @@ function! TransparencyToggle()
         endif
     endif
 endfunction
-" ノーマルモード:TransparencyToggleで背景透過切り換え
+" command for switching transparency
 if has("kaoriya")
     command TransparencyToggle call TransparencyToggle()
 endif
 
-" 終了時のウィンドウサイズ・位置を覚える
+" Remember window size and position
 let g:save_window_file = expand('~/.vimwinpos')
 augroup SaveWindow
     autocmd!
@@ -79,4 +77,3 @@ augroup END
 if filereadable(g:save_window_file)
     execute 'source' g:save_window_file
 endif
-
