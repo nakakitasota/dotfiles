@@ -71,10 +71,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
-hook_add = '''
-    " コメント前にスペースを入れたくない言語
-    " au FileType vim,zsh,css,php,cs let g:tcomment#options = {'whitespace': 'no'}
-'''
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
