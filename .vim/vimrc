@@ -77,7 +77,7 @@ set cursorline
 set smartindent
 set title
 set nowrap
-set backspace=2
+set backspace=indent,eol,start
 set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\ %m%r%y%w[%{&fenc!=''?&fenc:&enc}][%{&ff}][%l,%c/%p]
 set laststatus=2
 set expandtab
