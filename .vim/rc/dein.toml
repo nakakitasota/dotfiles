@@ -2,6 +2,14 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'bluz71/vim-nightfly-guicolors'
+hook_add = '''
+    if !has("gui")
+        let g:nightflyTransparent = 1
+    endif
+'''
+
+[[plugins]]
 repo = 'tomasr/molokai'
 
 [[plugins]]
