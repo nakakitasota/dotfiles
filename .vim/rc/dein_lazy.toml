@@ -18,3 +18,19 @@ hook_add = '''
 [[plugins]]
 repo = 'PProvost/vim-ps1'
 on_ft = ['ps1']
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+on_if = 'has("nvim")'
+on_event = 'BufRead'
+hook_post_update = 'TSUpdate'
+hook_source = '''
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false
+    }
+}
+EOF
+'''
