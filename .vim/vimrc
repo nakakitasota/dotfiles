@@ -41,9 +41,16 @@ if dein#check_install()
     call dein#install()
 endif
 
-filetype plugin indent on
-
-syntax enable
+" ------------------------------------
+" neovimize.vim
+" ------------------------------------
+if !has('nvim')
+    let s:neovimize_dir = expand('~/.cache/neovimize')
+    if !isdirectory(s:neovimize_dir)
+        execute '!git clone https://github.com/nakakitasota/neovimize.vim' s:neovimize_dir
+    endif
+    execute 'source' s:neovimize_dir . '/plugin/neovimize.vim'
+endif
 
 " ------------------------------------
 " For specific file types
