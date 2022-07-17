@@ -20,6 +20,14 @@ repo = 'PProvost/vim-ps1'
 on_ft = ['ps1']
 
 [[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+on_event = 'BufRead'
+depends = 'context_filetype.vim'
+
+[[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 on_if = 'has("nvim")'
 on_event = 'BufRead'
