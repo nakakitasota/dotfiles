@@ -24,6 +24,7 @@ endif
 
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
+let g:dein#install_progress_type = 'floating'
 let g:dein#enable_notification = v:true
 
 if dein#load_state(s:dein_dir)
