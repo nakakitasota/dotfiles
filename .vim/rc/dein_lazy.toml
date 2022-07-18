@@ -20,6 +20,10 @@ repo = 'PProvost/vim-ps1'
 on_ft = ['ps1']
 
 [[plugins]]
+repo = 'cohama/lexima.vim'
+on_event = 'InsertEnter'
+
+[[plugins]]
 repo = 'machakann/vim-sandwich'
 on_event = 'CursorHold'
 
