@@ -20,6 +20,10 @@ repo = 'PProvost/vim-ps1'
 on_ft = ['ps1']
 
 [[plugins]]
+repo = 'machakann/vim-sandwich'
+on_event = 'CursorHold'
+
+[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]

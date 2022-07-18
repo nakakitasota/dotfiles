@@ -54,21 +54,6 @@ hook_add = '''
 repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
-repo = 'tpope/vim-surround'
-hook_add = '''
-    let g:surround_{char2nr("「")} = "「 \r 」"
-    let g:surround_{char2nr("」")} = "「\r」"
-    let g:surround_{char2nr("【")} = "【 \r 】"
-    let g:surround_{char2nr("】")} = "【\r】"
-    let g:surround_{char2nr("（")} = "（ \r ）"
-    let g:surround_{char2nr("）")} = "（\r）"
-    let g:surround_{char2nr("＜")} = "＜ \r ＞"
-    let g:surround_{char2nr("＞")} = "＜\r＞"
-    let g:surround_{char2nr("｛")} = "｛ \r ｝"
-    let g:surround_{char2nr("｝")} = "｛\r｝"
-'''
-
-[[plugins]]
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
