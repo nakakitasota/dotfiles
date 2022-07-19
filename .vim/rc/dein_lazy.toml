@@ -24,6 +24,10 @@ repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 
 [[plugins]]
+repo = 'tyru/caw.vim'
+on_event = 'CursorHold'
+
+[[plugins]]
 repo = 'machakann/vim-sandwich'
 on_event = 'CursorHold'
 
