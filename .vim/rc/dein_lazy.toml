@@ -32,6 +32,13 @@ repo = 'machakann/vim-sandwich'
 on_event = 'CursorHold'
 
 [[plugins]]
+repo = 'easymotion/vim-easymotion'
+on_map = '<Plug>(easymotion-prefix)'
+hook_add = '''
+    map <Space><Space> <Plug>(easymotion-prefix)
+'''
+
+[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
