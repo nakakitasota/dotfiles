@@ -23,7 +23,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # fzf
-export FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp"
+export FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp --preview-window sharp"
 
 
 ################################
@@ -82,6 +82,8 @@ bindkey -M menuselect 'l' vi-forward-char
 if builtin command -v fzf > /dev/null; then
     bindkey '^R' finder-history-selection
 fi
+
+bindkey '^G' finder-repos
 
 
 ################################
@@ -161,6 +163,16 @@ function finder-history-selection() {
     zle reset-prompt
 }
 zle -N finder-history-selection
+
+function finder-repos() {
+    local src=$(ghq list | fzf --prompt="Repository> " --preview "exa --icons -a -T -L 1 $(ghq root)/{}")
+    if [ -n "$src" ]; then
+        BUFFER="cd $(ghq root)/$src"
+        zle accept-line
+    fi
+    zle reset-prompt
+}
+zle -N finder-repos
 
 function colortest() {
     for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo
