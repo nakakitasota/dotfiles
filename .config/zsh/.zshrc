@@ -51,8 +51,6 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 ################################
 # Completion
 ################################
-autoload -U compinit && compinit
-
 zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -211,23 +209,29 @@ alias diff='diff -U1'
 ################################
 # Plugins
 ################################
-source ~/.zplug/init.zsh
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "b4b4r07/enhancd", use:"init.sh"
-zplug "romkatv/powerlevel10k", as:theme, depth:1
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+if [ ! -d $ZINIT_HOME ]; then
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-zplug load --verbose
+declare -A ZINIT
+ZINIT[ZCOMPDUMP_PATH]="$XDG_STATE_HOME/zcompdump"
+
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit wait lucid blockf light-mode for \
+    @'zsh-users/zsh-completions' \
+    @'zsh-users/zsh-syntax-highlighting' \
+    @'zsh-users/zsh-history-substring-search' \
+    @'b4b4r07/enhancd'
+
+zinit ice depth"1"
+zinit light romkatv/powerlevel10k
+zinit light zsh-users/zsh-autosuggestions
+
+zicompinit
 
 # To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
