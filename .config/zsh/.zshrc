@@ -138,14 +138,18 @@ function mkcd() {
 }
 
 function chpwd() {
-    case ${OSTYPE} in
-        darwin*)
-            ls -ltrG
-            ;;
-        linux*)
-            ls -ltr --color=auto
-            ;;
-    esac
+    if builtin command -v exa > /dev/null; then
+        exa --icons -l
+    else
+        case ${OSTYPE} in
+            darwin*)
+                ls -lG
+                ;;
+            linux*)
+                ls -l --color=auto
+                ;;
+        esac
+    fi
 }
 
 function finder-history-selection() {
@@ -175,23 +179,6 @@ alias -g H='| head'
 alias -g G='| grep'
 alias -g GI='| grep -ri'
 
-case ${OSTYPE} in
-    darwin*)
-        alias ls='ls -G'
-        alias lst='ls -ltrG'
-        alias l='ls -ltrG'
-        alias la='ls -laG'
-        alias ll='ls -lG'
-        ;;
-    linux*)
-        alias ls='ls --color=auto'
-        alias lst='ls -ltr --color=auto'
-        alias l='ls -ltr --color=auto'
-        alias la='ls -la --color=auto'
-        alias ll='ls -l --color=auto'
-        ;;
-esac
-
 alias so='source'
 alias v='vim'
 alias vi='vim'
@@ -204,6 +191,31 @@ alias mkdir='mkdir -p'
 alias ..='c ../'
 alias back='pushd'
 alias diff='diff -U1'
+
+if builtin command -v exa > /dev/null; then
+    alias ls='exa --icons'
+    alias ll='exa --icons -l'
+    alias la='exa --icons -al'
+    alias lt='exa --icons --sort newest -l'
+    alias lat='exa --icons --sort newest -al'
+else
+    case ${OSTYPE} in
+        darwin*)
+            alias ls='ls -G'
+            alias ll='ls -lG'
+            alias la='ls -laG'
+            alias lt='ls -ltrG'
+            alias lat='ls -altrG'
+            ;;
+        linux*)
+            alias ls='ls --color=auto'
+            alias ll='ls -l --color=auto'
+            alias la='ls -la --color=auto'
+            alias lt='ls -ltr --color=auto'
+            alias lat='ls -altr --color=auto'
+            ;;
+    esac
+fi
 
 
 ################################
