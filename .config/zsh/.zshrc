@@ -97,6 +97,7 @@ autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ":chpwd:*" recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-file "$XDG_STATE_HOME/chpwd-recent-dirs"
 
 
 ################################
@@ -228,5 +229,5 @@ fi
 
 zplug load --verbose
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
+[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
