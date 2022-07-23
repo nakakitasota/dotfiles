@@ -22,6 +22,9 @@ esac
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+# fzf
+export FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp"
+
 
 ################################
 # Options
@@ -76,7 +79,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 
-if builtin command -v peco > /dev/null; then
+if builtin command -v fzf > /dev/null; then
     bindkey '^R' finder-history-selection
 fi
 
@@ -153,15 +156,8 @@ function chpwd() {
 }
 
 function finder-history-selection() {
-    case ${OSTYPE} in
-        darwin*)
-            BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-            ;;
-        linux*)
-            BUFFER=`\\history -n 1 | tac | awk '!a[$0]++' | peco`
-            ;;
-    esac
-    CURSOR=$#BUFFER
+    BUFFER=$(history -n 1 | fzf --query="$LBUFFER" --prompt="History> ")
+    CURSOR=${#BUFFER}
     zle reset-prompt
 }
 zle -N finder-history-selection
