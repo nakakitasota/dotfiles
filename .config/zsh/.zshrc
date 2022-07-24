@@ -134,6 +134,14 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 ################################
 # Functions
 ################################
+function cd() {
+    if [ $# = 0 ]; then
+        finder-cdr
+    else
+        builtin cd "$@"
+    fi
+}
+
 function mkcd() {
     if [[ -d $1 ]]; then
         echo "$1 already exists!"
@@ -164,6 +172,15 @@ function finder-history-selection() {
     zle reset-prompt
 }
 zle -N finder-history-selection
+
+function finder-cdr() {
+    local target_dir=$(cdr -l \
+        | sed -e 's/^[0-9]\+ \+//' -e "s:^~:$HOME:" -e "1i $HOME" \
+        | fzf --prompt="Directory> " --preview "exa --icons -a -T -L 1 {}")
+    if [ -n "$target_dir" ]; then
+        builtin cd $target_dir
+    fi
+}
 
 function finder-repos() {
     local src=$(ghq list | fzf --prompt="Repository> " --preview "exa --icons -a -T -L 1 $(ghq root)/{}")
