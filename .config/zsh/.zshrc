@@ -244,8 +244,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit wait lucid blockf light-mode for \
     @'zsh-users/zsh-completions' \
     @'zsh-users/zsh-history-substring-search' \
-    @'zsh-users/zsh-syntax-highlighting' \
-    @'b4b4r07/enhancd'
+    @'zsh-users/zsh-syntax-highlighting'
 
 zinit ice depth"1"
 zinit light romkatv/powerlevel10k
