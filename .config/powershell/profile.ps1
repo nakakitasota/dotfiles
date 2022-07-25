@@ -1,5 +1,4 @@
 Import-Module posh-git
-Import-Module oh-my-posh
 Import-Module Terminal-Icons
 
 Set-PSReadlineOption -BellStyle None
@@ -9,7 +8,7 @@ Set-PSReadLineKeyHandler -Key "Ctrl+f" -Function ForwardWord
 
 $ScriptDir = $PSScriptRoot
 
-Set-PoshPrompt -Theme $ScriptDir\PoshThemes\Paradox-Mod.omp.json
+oh-my-posh init pwsh --config $ScriptDir\PoshThemes\Paradox-Mod.omp.json | Invoke-Expression
 
 function rmrf {
     <#
