@@ -174,8 +174,10 @@ function finder-history-selection() {
 zle -N finder-history-selection
 
 function finder-cdr() {
+    local lf=$(printf '\\\012_')
+    lf=${lf%_}
     local target_dir=$(cdr -l \
-        | sed -e 's/^[0-9]\+ \+//' -e "s:^~:$HOME:" -e "1i $HOME" \
+        | sed -e 's/^[[:digit:]]*[[:blank:]]*//' -e "s:^~:$HOME:" -e "1s:^:${HOME}${lf}:" \
         | fzf --prompt="Directory> " --preview "exa --icons -a -T -L 1 {}")
     if [ -n "$target_dir" ]; then
         builtin cd $target_dir
