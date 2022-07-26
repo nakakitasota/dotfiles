@@ -175,7 +175,7 @@ function finder-history-selection() {
             local hist=$(history -n 1 | tac | awk '!a[$0]++')
             ;;
     esac
-    BUFFER=$(echo ${hist} | fzf --query="$LBUFFER" --prompt="History> ")
+    BUFFER=$(echo ${hist} | fzf --query="$LBUFFER" --prompt="History> " --no-sort)
     CURSOR=${#BUFFER}
     zle reset-prompt
 }
