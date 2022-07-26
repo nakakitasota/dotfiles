@@ -167,7 +167,15 @@ function chpwd() {
 }
 
 function finder-history-selection() {
-    BUFFER=$(history -n 1 | fzf --query="$LBUFFER" --prompt="History> ")
+    case ${OSTYPE} in
+        darwin*)
+            local hist=$(history -n 1 | tail -r | awk '!a[$0]++')
+            ;;
+        linux*)
+            local hist=$(history -n 1 | tac | awk '!a[$0]++')
+            ;;
+    esac
+    BUFFER=$(echo ${hist} | fzf --query="$LBUFFER" --prompt="History> ")
     CURSOR=${#BUFFER}
     zle reset-prompt
 }
