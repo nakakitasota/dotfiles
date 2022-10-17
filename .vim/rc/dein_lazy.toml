@@ -20,6 +20,18 @@ repo = 'PProvost/vim-ps1'
 on_ft = ['ps1']
 
 [[plugins]]
+repo = 'goerz/jupytext.vim'
+on_path = '\.ipynb$'
+hook_source = '''
+    let g:jupytext_fmt = 'py:percent'
+    let g:jupytext_filetype_map = {'py': 'python'}
+'''
+
+[[plugins]]
+repo = 'jupyter-vim/jupyter-vim'
+on_path = '\.ipynb$'
+
+[[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 
