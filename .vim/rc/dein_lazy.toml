@@ -34,6 +34,13 @@ on_path = '\.ipynb$'
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
+hook_post_source = '''
+    let g:lexima_no_default_rules = 1
+    call lexima#set_default_rules()
+    execute printf("inoremap <expr><silent> <CR> coc#pum#visible() ? coc#pum#confirm() : lexima#expand(%s, 'i')",
+        \ string(lexima#string#to_mappable('<CR>'))
+        \ )
+'''
 
 [[plugins]]
 repo = 'tyru/caw.vim'
