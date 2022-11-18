@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 /* タブ */
-#tabbrowser-tabs {
+#tabbrowser-tabs,
+#alltabs-button,
+#private-browsing-indicator-with-label {
     visibility: collapse !important;
 }
 
