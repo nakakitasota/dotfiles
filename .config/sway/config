@@ -1,0 +1,7 @@
+# i3 config file (v4)
+
+set $mod Mod4
+
+include ~/.config/i3/config.d/base.conf
+include ~/.config/sway/config.d/sway.conf
+include ~/.config/sway/config.d/local/`hostname`.conf
