@@ -16,6 +16,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
 
 [[plugins]]
