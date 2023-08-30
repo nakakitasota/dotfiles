@@ -6,6 +6,9 @@ Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineKeyHandler -Key "Ctrl+f" -Function ForwardWord
 
+$env:FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp --preview-window sharp"
+Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
+
 $ScriptDir = $PSScriptRoot
 
 oh-my-posh init pwsh --config $ScriptDir\PoshThemes\Paradox-Mod.omp.json | Invoke-Expression
