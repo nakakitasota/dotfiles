@@ -1,0 +1,11 @@
+[Unit]
+Description=xremap
+
+[Service]
+KillMode=process
+ExecStart=/usr/bin/xremap %h/.config/xremap/config.yml
+ExecStop=/usr/bin/killall xremap
+Restart=always
+
+[Install]
+WantedBy=default.target
