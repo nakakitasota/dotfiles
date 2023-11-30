@@ -15,7 +15,7 @@
     {
         "defaults": 
         {
-            "colorScheme": "Night Owl",
+            "colorScheme": "nightfly",
             "cursorShape": "filledBox",
             "font": 
             {
@@ -287,53 +287,32 @@
             "selectionBackground": "#FFFFFF",
             "white": "#C0C0C0",
             "yellow": "#808000"
+        },
+        {
+            "background": "#011627",
+            "black": "#1D3B53",
+            "blue": "#82AAFF",
+            "brightBlack": "#7C8F8F",
+            "brightBlue": "#82AAFF",
+            "brightCyan": "#7FDBCA",
+            "brightGreen": "#21C7A8",
+            "brightPurple": "#AE81FF",
+            "brightRed": "#FF5874",
+            "brightWhite": "#D6DEEB",
+            "brightYellow": "#ECC48D",
+            "cursorColor": "#9CA1AA",
+            "cyan": "#7FDBCA",
+            "foreground": "#BDC1C6",
+            "green": "#A1CD5E",
+            "name": "nightfly",
+            "purple": "#C792EA",
+            "red": "#FC514E",
+            "selectionBackground": "#B2CEEE",
+            "white": "#A1AAB8",
+            "yellow": "#E3D18A"
         }
     ],
     "theme": "dark",
-    "themes": 
-    [
-        {
-            "name": "legacyDark",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacyLight",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacySystem",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "system",
-                "useMica": false
-            }
-        }
-    ],
+    "themes": [],
     "useAcrylicInTabRow": true
 }
