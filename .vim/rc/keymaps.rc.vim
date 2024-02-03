@@ -17,6 +17,7 @@ nnoremap s> <C-w>>
 nnoremap s< <C-w><
 nnoremap s+ <C-w>+
 nnoremap s- <C-w>-
+nnoremap se <C-w>=
 
 " Terminal
 tnoremap <ESC> <C-\><C-n>
