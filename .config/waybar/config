@@ -1,10 +1,8 @@
 {
-    "layer": "top", // Show Waybar at the top
     "height": 32, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
-    "modules-left": ["sway/workspaces", "hyprland/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["sway/window", "hyprland/window"],
-    "modules-right": ["network", "cpu", "memory", "pulseaudio", "battery", "battery#bat2", "clock", "tray"],
+    "modules-left": ["sway/workspaces", "hyprland/workspaces", "sway/mode", "sway/window", "hyprland/window"],
+    "modules-center": [],
+    "modules-right": ["custom/media", "network", "cpu", "memory", "pulseaudio", "battery", "battery#bat2", "clock", "tray"],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -48,14 +46,14 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 16,
         "spacing": 10
     },
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d(%a) %H:%M:%S}",
-        "format-alt": "{:%Y-%m-%d}",
+        "format": "{:%a %d %b  %H:%M}",
+        "format-alt": "{:%F %a %H:%M:%S}",
         "interval": 1
     },
     "cpu": {
@@ -85,7 +83,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}%  ",
+        "format-charging": "{capacity}% 󰢟",
         "format-plugged": "{capacity}%  ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -98,9 +96,9 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid}  ",
-        "format-ethernet": "{ipaddr}/{cidr}  ",
-        "tooltip-format": "{ifname} via {gwaddr}  ",
-        "format-linked": "{ifname} (No IP)  ",
+        "format-ethernet": "{ipaddr}/{cidr}  󰈀 ",
+        "tooltip-format": "{ifname} via {gwaddr}  󰈀 ",
+        "format-linked": "{ifname} (No IP)  󰈀 ",
         "format-disconnected": "Disconnected ⚠ ",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -109,13 +107,13 @@
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} ",
         "format-bluetooth-muted": "Muted {icon} ",
-        "format-muted": "Muted ﱝ ",
+        "format-muted": "Muted  ",
         "format-source": "{volume}%  ",
         "format-source-muted": " ",
         "format-icons": {
             "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
+            "hands-free": "󰋎 ",
+            "headset": "󰋎 ",
             "phone": " ",
             "portable": " ",
             "car": " ",
@@ -126,10 +124,9 @@
     "custom/media": {
         "format": "{icon} {}",
         "format-icons": {
-            "default": " "
+            "default": "  "
         },
         "escape": true,
-        "exec": "playerctl -F metadata --format '{{ status }}: {{ trunc(title, 24) }} / {{ trunc(artist, 16) }}'"
+        "exec": "playerctl -F metadata --format '{{ trunc(title, 24) }} / {{ trunc(artist, 12) }}'"
     }
 }
-
