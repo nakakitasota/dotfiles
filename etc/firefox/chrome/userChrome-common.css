@@ -64,8 +64,8 @@
 }
 
 /* ブックマークツールバー */
-.bookmark-item > .toolbarbutton-text {
-    display: none !important;
+#personal-bookmarks .bookmark-item > .toolbarbutton-text {
+    display:none !important;
 }
 
 toolbarbutton.bookmark-item:not(.subviewbutton) {
