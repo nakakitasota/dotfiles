@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
 /* タブ */
-#tabbrowser-tabs,
-#alltabs-button,
-#private-browsing-indicator-with-label {
+#main-window[tabsintitlebar="true"] #TabsToolbar > .toolbar-items {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
     visibility: collapse !important;
 }
 
@@ -79,10 +82,6 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 #main-window[privatebrowsingmode="temporary"] {
     box-sizing: border-box !important;
     border: 3px solid purple !important;
-}
-
-#TabsToolbar .private-browsing-indicator {
-    display: none !important;
 }
 
 /* ロケーションバーにフォーカス時IMEをOFF */

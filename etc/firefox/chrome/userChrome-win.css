@@ -9,12 +9,19 @@
 
 /* ナビゲーションバー */
 #nav-bar {
-    margin-top: -27px;
-    margin-right: 140px;
-    padding-left: 32px;
-    background-image: url("chrome://branding/content/icon16.png") !important;
     background-position: 8px 4px;
     background-repeat: no-repeat;
+}
+
+#main-window[tabsintitlebar="true"] #nav-bar {
+    margin-top: -25px;
+    margin-right: 140px;
+    padding-left: 32px !important;
+    background-image: url("chrome://branding/content/icon16.png") !important;
+}
+
+#main-window[tabsintitlebar="true"] #TabsToolbar {
+    max-height: 27px !important;
 }
 
 #TabsToolbar, #toolbar-menubar {
