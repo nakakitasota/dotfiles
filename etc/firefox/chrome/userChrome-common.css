@@ -47,12 +47,6 @@
     -moz-padding-start: 0px !important;
 }
 
-.urlbar-history-dropmarker,
-#reader-mode-button,
-#star-button {
-    display: none !important;
-}
-
 /* アドレスバー */
 #urlbar:not([focused="true"]) > #urlbar-background, #searchbar {
     min-height: 24px !important;
