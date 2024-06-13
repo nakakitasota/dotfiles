@@ -9,11 +9,11 @@
 
 /* ツールバー */
 #nav-bar {
-    margin-top: -20px; /* 上方向に余白をマイナス＝ウィンドウボーダーに食い込ませる */
+    margin-top: -36px;
 }
 
 .titlebar-buttonbox-container{
-    margin-bottom: -6px;
+    margin-bottom: 8px !important;
 }
 
 #TabsToolbar, #titlebar, #nav-bar, #TabsToolbar .tabbrowser-tab[selected], #PersonalToolbar{
