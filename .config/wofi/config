@@ -1,3 +1,8 @@
 show=drun
+lines=6
+prompt=
 allow_images=true
 term=alacritty
+no_actions=true
+hide_scroll=true
+image_size=16

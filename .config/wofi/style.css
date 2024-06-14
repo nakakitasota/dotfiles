@@ -1,48 +1,72 @@
+@define-color bg_color #1b2224;
+@define-color bg_color_with_opacity rgba(27, 34, 36, 0.5);
+@define-color bg_color_selected rgba(204, 215, 212, 0.1);
+@define-color fg_color #ccd7d4;
+@define-color accent_color #2eb398;
+@define-color icon_color #aab5b3;
+
 * {
     font-family:"Noto Sans CJK JP";
-    font-size: 20;
+    font-size: 16px;
+}
+
+undershoot.top,
+undershoot.bottom,
+undershoot.right,
+undershoot.left {
+    background: none;
+    background-image: none;
+    padding: 0px;
+}
+
+entry {
+    box-shadow: none;
 }
 
 window {
     margin: 0px;
-    border: 2px solid #00bcd4;
-    background-color: #222d32;
-    border-radius: 5;
-    color: #cfd8dc;
+    border-radius: 4px;
+    background-color: @bg_color_with_opacity;
 }
 
 #input {
-    margin: 10px;
-    padding: 10px;
+    margin: 0 0 8px 0;
+    padding: 8px 16px;
     border: none;
-    color: #cfd8dc;
-    background-color: #222d32;
+    color: @fg_color;
+    background: none;
+    border-radius: 4px;
 }
 
-#inner-box {
-    margin: 10px;
-    border: none;
+/* search icon */
+#input:first-child > :nth-child(1) {
+    color: @icon_color;
+    padding-right: 8px;
+}
+
+/* clear button */
+#input:first-child > :last-child {
+    color: @icon_color;
 }
 
 #outer-box {
     margin: 12px;
-    border: none;
-}
-
-#scroll {
-    margin: 0px;
-    border: none;
 }
 
 #text {
-    margin: 15px;
-    border: none;
+    color: @fg_color;
+}
+
+#img {
+    padding-right: 8px;
 }
 
 #entry {
-    padding: 0 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
 }
 
 #entry:selected {
-    background-color: #475359;
+    background: @bg_color_selected;
+    outline: none;
 }
