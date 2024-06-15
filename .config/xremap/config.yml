@@ -9,6 +9,7 @@ keymap:
       not:
         - "Alacritty"
         - "URxvt"
+        - "foot"
         - "jetbrains-idea"
         - "jetbrains-studio"
     remap:
