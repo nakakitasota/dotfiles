@@ -1,4 +1,5 @@
-background-color=#222d32
+background-color=#1b222480
 border-size=0
 default-timeout=10000
 padding=16
+font=Noto Sans CJK JP 10
