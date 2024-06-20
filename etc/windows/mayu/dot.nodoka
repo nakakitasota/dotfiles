@@ -1,0 +1,8 @@
+include "dot.mayu"
+def option FocusChange = enable
+
+keymap Global
+key U-FocusChange = &IconColor(0)
+
+keymap ConsoleApps : Global
+key U-FocusChange = &IconColor(5)

@@ -1,0 +1,58 @@
+include "109.mayu"
+
+keymap Global
+
+#
+# Emacs-like key bindings
+#
+mod mod0 += !Eisuu
+key M0-f = Right
+key M0-b = Left
+key M0-p = Up
+key M0-n = Down
+key M0-a = Home
+key M0-e = End
+key M0-h = BackSpace
+key M0-d = Delete
+key M0-k = S-End Delete
+key M0-OpenBracket = Esc
+
+# While typing text using the IME
+key IC-M0-U = C-U
+key IC-M0-I = C-I
+key IC-M0-O = C-O
+key IC-M0-P = C-P
+key IC-M0-Atmark = C-Atmark
+key IC-M0-N = C-N
+key IC-M0-M = C-M
+key IC-M0-H = C-H
+key IC-M0-G = C-G
+key IC-M0-J = C-J
+key IC-M0-K = C-K
+key IC-M0-L = C-L
+key IC-M0-Left = C-Left
+key IC-M0-Right = C-Right
+key IC-M0-A = C-A
+key IC-M0-W = C-W
+
+#
+# Super key
+#
+key U-*LWin = &Ignore
+key W-Enter = &ShellExecute("open", "wt",,, ShowNormal)
+# Open start menu
+key W-Space = C-Esc
+
+
+#
+# Terminal emulators or code editors
+#
+keymap ConsoleApps : Global
+
+mod mod0 -= Eisuu
+mod Ctrl += !Eisuu
+key IL-*IC-Esc = Esc NonConvert
+key IL-*IC-C-OpenBracket = Esc NonConvert
+window ConsoleWindowClass /ConsoleWindowClass/ : ConsoleApps
+window WindowsTerminal /WindowsTerminal.exe/ : ConsoleApps
+window GVim /gvim.exe/ : ConsoleApps
