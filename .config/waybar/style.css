@@ -52,6 +52,10 @@ window#waybar {
     color: @accent_color;
 }
 
+#window {
+    font-weight: 500;
+}
+
 #window,
 #battery,
 #cpu,
