@@ -119,7 +119,7 @@
             "car": " ",
             "default": [" ", " ", " "]
         },
-        "on-click": "pavucontrol"
+        "on-click-right": "pavucontrol"
     },
     "custom/media": {
         "format": "{icon} {}",
