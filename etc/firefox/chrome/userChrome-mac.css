@@ -8,11 +8,15 @@
 }
 
 /* ツールバー */
-#nav-bar {
+#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
     margin-top: -36px;
 }
 
-.titlebar-buttonbox-container{
+#main-window:not([inFullscreen]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
+    padding-left: 80px !important;
+}
+
+#main-window:not([inFullscreen]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) .titlebar-buttonbox-container{
     margin-bottom: 8px !important;
 }
 
@@ -26,8 +30,4 @@
 
 :root[OSXLionFullscreen]:not(:-moz-lwtheme) :is(#navigator-toolbox, #sidebar-box) {
     background: none !important;
-}
-
-#main-window:not([inFullscreen]) #nav-bar {
-    padding-left: 80px !important;
 }

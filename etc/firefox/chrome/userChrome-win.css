@@ -8,19 +8,16 @@
 }
 
 /* ナビゲーションバー */
-#nav-bar {
-    background-position: 8px 4px;
-    background-repeat: no-repeat;
-}
-
-#main-window[tabsintitlebar="true"] #nav-bar {
+#main-window[tabsintitlebar="true"]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
     margin-top: -25px;
     margin-right: 140px;
     padding-left: 32px !important;
+    background-position: 8px 4px;
+    background-repeat: no-repeat;
     background-image: url("chrome://branding/content/icon16.png") !important;
 }
 
-#main-window[tabsintitlebar="true"] #TabsToolbar {
+#main-window[tabsintitlebar="true"]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar {
     max-height: 27px !important;
 }
 
