@@ -10,6 +10,7 @@ key M0-f = Right
 key M0-b = Left
 key M0-p = Up
 key M0-n = Down
+key M0-m = Enter
 key M0-a = Home
 key M0-e = End
 key M0-h = BackSpace
