@@ -48,7 +48,7 @@
 }
 
 /* アドレスバー */
-#urlbar:not([focused="true"]) > #urlbar-background, #searchbar {
+#urlbar:not([breakout-extend="true"]) > #urlbar-background, #searchbar {
     min-height: 24px !important;
     height: 24px !important;
     margin-top: 0px !important;
