@@ -44,6 +44,54 @@ key W-Enter = &ShellExecute("open", "wt",,, ShowNormal)
 # Open start menu
 key W-Space = C-Esc
 
+#
+# komorebi tiling window manager
+#
+key W-q = &ShellExecute("open", "komorebic", "close",, hide)
+key W-f = &ShellExecute("open", "komorebic", "toggle-monocle",, hide)
+key W-S-Space = &ShellExecute("open", "komorebic", "toggle-float",, hide)
+
+# focus windows
+key W-h = &ShellExecute("open", "komorebic", "focus left",, hide)
+key W-j = &ShellExecute("open", "komorebic", "focus down",, hide)
+key W-k = &ShellExecute("open", "komorebic", "focus up",, hide)
+key W-l = &ShellExecute("open", "komorebic", "focus right",, hide)
+
+# move windows
+key W-S-h = &ShellExecute("open", "komorebic", "move left",, hide)
+key W-S-j = &ShellExecute("open", "komorebic", "move down",, hide)
+key W-S-k = &ShellExecute("open", "komorebic", "move up",, hide)
+key W-S-l = &ShellExecute("open", "komorebic", "move right",, hide)
+
+# resize windows
+key W-A-h = &ShellExecute("open", "komorebic", "resize-axis horizontal decrease",, hide)
+key W-A-j = &ShellExecute("open", "komorebic", "resize-axis vertical decrease",, hide)
+key W-A-k = &ShellExecute("open", "komorebic", "resize-axis vertical increase",, hide)
+key W-A-l = &ShellExecute("open", "komorebic", "resize-axis horizontal increase",, hide)
+
+# focus workspaces
+key W-_1 = &ShellExecute("open", "komorebic", "focus-workspace 0",, hide)
+key W-_2 = &ShellExecute("open", "komorebic", "focus-workspace 1",, hide)
+key W-_3 = &ShellExecute("open", "komorebic", "focus-workspace 2",, hide)
+key W-_4 = &ShellExecute("open", "komorebic", "focus-workspace 3",, hide)
+key W-_5 = &ShellExecute("open", "komorebic", "focus-workspace 4",, hide)
+key W-_6 = &ShellExecute("open", "komorebic", "focus-workspace 5",, hide)
+key W-_7 = &ShellExecute("open", "komorebic", "focus-workspace 6",, hide)
+key W-_8 = &ShellExecute("open", "komorebic", "focus-workspace 7",, hide)
+key W-C-h = &ShellExecute("open", "komorebic", "cycle-workspace previous",, hide)
+key W-C-l = &ShellExecute("open", "komorebic", "cycle-workspace next",, hide)
+
+# move a window to a different workspace
+key W-S-_1 = &ShellExecute("open", "komorebic", "move-to-workspace 0",, hide)
+key W-S-_2 = &ShellExecute("open", "komorebic", "move-to-workspace 1",, hide)
+key W-S-_3 = &ShellExecute("open", "komorebic", "move-to-workspace 2",, hide)
+key W-S-_4 = &ShellExecute("open", "komorebic", "move-to-workspace 3",, hide)
+key W-S-_5 = &ShellExecute("open", "komorebic", "move-to-workspace 4",, hide)
+key W-S-_6 = &ShellExecute("open", "komorebic", "move-to-workspace 5",, hide)
+key W-S-_7 = &ShellExecute("open", "komorebic", "move-to-workspace 6",, hide)
+key W-S-_8 = &ShellExecute("open", "komorebic", "move-to-workspace 7",, hide)
+key W-C-S-h = &ShellExecute("open", "komorebic", "cycle-move-to-workspace previous",, hide)
+key W-C-S-l = &ShellExecute("open", "komorebic", "cycle-move-to-workspace next",, hide)
 
 #
 # Terminal emulators or code editors
