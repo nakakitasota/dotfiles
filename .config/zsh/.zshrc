@@ -18,6 +18,24 @@ case ${OSTYPE} in
         ;;
 esac
 
+#Android SDK
+case ${OSTYPE} in
+    darwin*)
+        ANDROID_HOME=$HOME/Library/Android/sdk
+        ;;
+    linux*)
+        ANDROID_HOME=$HOME/Android/Sdk
+        ;;
+esac
+
+path=(
+    $path
+    $ANDROID_HOME(N-/)
+    $ANDROID_HOME/emulator(N-/)
+    $ANDROID_HOME/tools/(N-/)
+    $ANDROID_HOME/platform-tools(N-/)
+)
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
