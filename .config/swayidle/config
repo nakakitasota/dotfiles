@@ -1,0 +1,5 @@
+timeout 300 'swaylock -f'
+timeout 330 'swaymsg "output * power off"'
+after-resume 'swaymsg "output * power on"'
+before-sleep 'loginctl lock-session'
+lock 'swaylock -f'
