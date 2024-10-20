@@ -43,6 +43,15 @@ export NVM_DIR="$HOME/.nvm"
 # fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp --preview-window sharp"
 
+# editor
+if builtin command -v nvim > /dev/null; then
+    export EDITOR='nvim'
+elif builtin command -v vim > /dev/null; then
+    export EDITOR='vim'
+else
+    export EDITOR='vi'
+fi
+
 
 ################################
 # Options
