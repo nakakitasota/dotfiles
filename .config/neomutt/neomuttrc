@@ -1,0 +1,33 @@
+set my_config_dir = "`echo $XDG_CONFIG_HOME`/neomutt"
+set my_profile_dir = "$my_config_dir/profile.d"
+set my_cache_dir = "`echo $XDG_CACHE_HOME`/neomutt"
+
+set header_cache     = $my_cache_dir/headers
+set message_cachedir = $my_cache_dir/bodies
+set certificate_file = $my_cache_dir/certificates
+
+set ssl_starttls
+set ssl_force_tls
+
+unset imap_passive
+set imap_keepalive = 300
+set mail_check = 120
+
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+
+set mail_check_stats
+set imap_check_subscribed
+
+set sleep_time = 0
+
+bind index G imap-fetch-mail
+bind index,pager B sidebar-toggle-visible
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Cm sidebar-open
+
+# color unread messages
+color index    white    color017    "~U"
+
+source "$my_profile_dir/profiles.rc"
