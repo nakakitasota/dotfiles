@@ -96,3 +96,13 @@ require("notify").setup({
 })
 EOF
 '''
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+on_if = '!has("nvim")'
+on_event = 'VimEnter'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+on_if = '!has("nvim")'
+on_event = 'VimEnter'
