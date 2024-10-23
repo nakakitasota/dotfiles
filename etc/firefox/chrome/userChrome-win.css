@@ -2,12 +2,22 @@
 
 @import "./userChrome-common.css";
 
-/* フォント変更 */
+/* --------------------------------
+UI font
+-------------------------------- */
 * {
-    font-family: "メイリオ" !important;
+    font-family: "Segoe UI", "游ゴシック" !important;
+    font-weight: 500;
 }
 
-/* ナビゲーションバー */
+/* adjust vertical align for Segoe UI */
+#urlbar-input, #identity-icon-label {
+    padding-bottom: 3px !important;
+}
+
+/* --------------------------------
+Toolbar
+-------------------------------- */
 #main-window[tabsintitlebar="true"]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
     margin-top: -25px;
     margin-right: 140px;
