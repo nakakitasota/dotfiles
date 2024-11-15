@@ -29,4 +29,17 @@ function rmrf {
     Remove-Item -Recurse -Force $Target
 }
 
+function Invoke-FuzzyGhq {
+    $path = ghq list | fzf --prompt="Repository> "
+    if ($LastExitCode -eq 0) {
+        cd "$(ghq root)\$path"
+    }
+}
+
+Set-PSReadLineKeyHandler -Chord 'Ctrl+g' -ScriptBlock {
+    [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert("Invoke-FuzzyGhq")
+    [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+
 Set-Alias open Invoke-Item
