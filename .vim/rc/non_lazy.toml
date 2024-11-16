@@ -41,17 +41,6 @@ repo = 'Shougo/denite.nvim'
 hook_add = 'source ~/.vim/rc/denite.rc.vim'
 
 [[plugins]]
-repo = 'Shougo/defx.nvim'
-hook_add = 'source ~/.vim/rc/defx.rc.vim'
-depends = ['defx-git', 'defx-icons']
-
-[[plugins]]
-repo = 'kristijanhusak/defx-git'
-
-[[plugins]]
-repo = 'kristijanhusak/defx-icons'
-
-[[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]

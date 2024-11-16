@@ -1,0 +1,13 @@
+[[plugins]]
+repo = 'lambdalisue/vim-fern'
+on_cmd = 'Fern'
+hook_add = 'source ~/.vim/rc/fern.rc.vim'
+
+[[plugins]]
+repo = 'lambdalisue/vim-fern-renderer-devicons'
+on_source = 'vim-fern'
+
+[[plugins]]
+repo = 'lambdalisue/vim-fern-git-status'
+on_source = 'vim-fern'
+hook_source = 'call fern_git_status#init()'
