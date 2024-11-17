@@ -56,6 +56,8 @@ autocmd User Dpp:makeStatePost
 command! DppInstall call dpp#async_ext_action('installer', 'install')
 command! DppUpdate call dpp#async_ext_action('installer', 'update')
 
+filetype plugin indent on
+
 " ------------------------------------
 " neovimize.vim
 " ------------------------------------
