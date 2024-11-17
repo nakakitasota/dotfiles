@@ -37,10 +37,6 @@ merged = false
 repo = 'honza/vim-snippets'
 
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-hook_add = 'source ~/.vim/rc/denite.rc.vim'
-
-[[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
