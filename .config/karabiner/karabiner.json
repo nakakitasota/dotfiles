@@ -5350,7 +5350,8 @@
                     "from": { "key_code": "japanese_pc_xfer" },
                     "to": [{ "key_code": "japanese_kana" }]
                 }
-            ]
+            ],
+            "virtual_hid_keyboard": { "keyboard_type_v2": "jis" }
         }
     ]
 }
