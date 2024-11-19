@@ -5,6 +5,7 @@
     "diagnostic.virtualText": true,
     "diagnostic.virtualTextCurrentLineOnly": false,
     "diagnostic.virtualTextPrefix": "    ■ ",
+    "suggest.autoTrigger": "none",
     "suggest.noselect": false,
     "suggest.preferCompleteThanJumpPlaceholder": true,
     "suggest.completionItemKindLabels": {

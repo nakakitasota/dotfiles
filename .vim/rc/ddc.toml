@@ -1,0 +1,44 @@
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+depends = 'denops.vim'
+on_event = ['InsertEnter', 'CmdlineEnter']
+hook_source = 'source ~/.vim/rc/ddc.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+hook_source = '''
+    inoremap <silent><expr> <Down> pum#visible() ? "<Cmd>call pum#map#select_relative(+1)<CR>" : "\<Down>"
+    inoremap <silent><expr> <Up> pum#visible() ? "<Cmd>call pum#map#select_relative(-1)<CR>" : "\<Up>"
+
+    call pum#set_option(#{
+    \     auto_select: v:true,
+    \     commit_characters: ["."],
+    \     padding: v:true,
+    \     scrollbar_char: "│",
+    \ })
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+depends = 'pum.vim'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'LumaKernel/ddc-source-file'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+on_source = 'ddc.vim'
