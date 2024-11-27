@@ -32,6 +32,9 @@ repo = 'jupyter-vim/jupyter-vim'
 on_path = '\.ipynb$'
 
 [[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+
+[[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 hook_post_source = '''

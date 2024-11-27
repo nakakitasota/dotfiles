@@ -1,12 +1,16 @@
 call ddc#custom#patch_global('ui', 'pum')
 call ddc#custom#patch_global('sources', [
-    \ 'around', 'file'])
+    \ 'lsp', 'around', 'file'])
 
 call ddc#custom#patch_global('sourceOptions', {
     \ '_': {
     \   'matchers': ['matcher_head'],
     \   'sorters': ['sorter_rank'],
     \   'minAutoCompleteLength': 1,
+    \ },
+    \ 'lsp': {
+    \   'mark': 'L',
+    \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
     \ },
     \ 'around': {
     \   'mark': 'A',
@@ -15,6 +19,15 @@ call ddc#custom#patch_global('sourceOptions', {
     \   'mark': 'F',
     \   'isVolatile': v:true,
     \   'forceCompletionPattern': '\S/\S*',
+    \ }})
+
+call ddc#custom#patch_global('sourceParams', {
+    \ 'lsp': {
+    \     'snippetEngine': denops#callback#register({
+    \         body -> vsnip#anonymous(body)
+    \     }),
+    \     'enableResolveItem': v:true,
+    \     'enableAdditionalTextEdit': v:true,
     \ }})
 
 call ddc#custom#patch_filetype(

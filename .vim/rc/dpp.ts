@@ -19,6 +19,7 @@ export class Config extends BaseConfig {
         const [context, options] = await args.contextBuilder.get(args.denops);
         const protocols = await args.denops.dispatcher.getProtocols() as Record<string, Protocol>;
         const BASE_DIR = "~/.vim/rc";
+        const hasNvim = args.denops.meta.host === "nvim";
 
         const recordPlugins: Record<string, Plugin> = {};
         const ftplugins: Record<string, string> = {};
@@ -43,6 +44,10 @@ export class Config extends BaseConfig {
                 { path: `${BASE_DIR}/fern.toml`, lazy: true },
                 { path: `${BASE_DIR}/ddu.toml`, lazy: true },
                 { path: `${BASE_DIR}/ddc.toml`, lazy: true },
+                {
+                    path: hasNvim ? `${BASE_DIR}/nvim-lsp.toml` : `${BASE_DIR}/vim-lsp.toml`,
+                    lazy: true
+                },
             ].map((tomlFile) => {
                 return action.callback({
                     denops: args.denops,

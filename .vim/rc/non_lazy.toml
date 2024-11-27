@@ -28,12 +28,6 @@ repo = 'airblade/vim-gitgutter'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'neoclide/coc.nvim'
-build = './install.sh nightly'
-hook_add = 'source ~/.vim/rc/coc.rc.vim'
-merged = false
-
-[[plugins]]
 repo = 'honza/vim-snippets'
 
 [[plugins]]

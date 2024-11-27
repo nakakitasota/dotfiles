@@ -24,6 +24,11 @@ depends = 'pum.vim'
 on_source = 'ddc.vim'
 
 [[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+on_source = 'ddc.vim'
+depends = 'vim-vsnip'
+
+[[plugins]]
 repo = 'Shougo/ddc-source-around'
 on_source = 'ddc.vim'
 

@@ -1,0 +1,32 @@
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+on_event = ['BufReadPost', 'BufNewFile']
+on_cmd = ['LspInfo', 'LspInstall', 'LspUninstall']
+
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+depends = 'nvim-lspconfig'
+on_event = 'FileType'
+on_cmd = 'Mason'
+lua_source = '''
+    require('mason').setup()
+'''
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+on_source = 'nvim-lspconfig'
+depends = ['mason.nvim', 'ddc-source-lsp']
+lua_source = '''
+    require("mason-lspconfig").setup()
+    require('mason-lspconfig').setup_handlers({
+        function(server_name)
+            local nvim_lsp = require('lspconfig')
+            local capabilities = require("ddc_source_lsp").make_client_capabilities()
+            local opts = {
+                capabilities = capabilities,
+            }
+
+            nvim_lsp[server_name].setup(opts)
+        end
+    })
+'''
