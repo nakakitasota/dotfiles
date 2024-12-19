@@ -9,6 +9,7 @@ call ddc#custom#patch_global('sourceOptions', {
     \   'minAutoCompleteLength': 1,
     \ },
     \ 'lsp': {
+    \   'converters': ['converter_kind_labels'],
     \   'mark': 'L',
     \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
     \ },
@@ -28,6 +29,39 @@ call ddc#custom#patch_global('sourceParams', {
     \     }),
     \     'enableResolveItem': v:true,
     \     'enableAdditionalTextEdit': v:true,
+    \ }})
+
+call ddc#custom#patch_global(#{
+    \ filterParams: #{
+    \     converter_kind_labels: #{
+    \         kindLabels: #{
+    \             Text: "",
+    \             Method: "",
+    \             Function: "",
+    \             Constructor: "",
+    \             Field: "",
+    \             Variable: "",
+    \             Class: "",
+    \             Interface: "",
+    \             Module: "",
+    \             Property: "",
+    \             Unit: "",
+    \             Value: "",
+    \             Enum: "",
+    \             Keyword: "",
+    \             Snippet: "",
+    \             Color: "",
+    \             File: "",
+    \             Reference: "",
+    \             Folder: "",
+    \             EnumMember: "",
+    \             Constant: "",
+    \             Struct: "",
+    \             Event: "",
+    \             Operator: "",
+    \             TypeParameter: ""
+    \         },
+    \     }
     \ }})
 
 call ddc#custom#patch_filetype(
