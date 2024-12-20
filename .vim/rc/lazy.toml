@@ -35,6 +35,14 @@ on_path = '\.ipynb$'
 repo = 'hrsh7th/vim-vsnip'
 
 [[plugins]]
+repo = 'matsui54/denops-signature_help'
+depends = 'denops.vim'
+on_event = 'InsertEnter'
+hook_source = '''
+    call signature_help#enable()
+'''
+
+[[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 hook_post_source = '''
