@@ -107,3 +107,6 @@ require("notify").setup({
 })
 EOF
 '''
+
+[[plugins]]
+repo = 'lambdalisue/vim-nerdfont'

@@ -3,7 +3,7 @@ nnoremap <silent>sf :<C-u>Fern %:h -reveal=%:p<CR>
 let g:fern#disable_default_mappings = 1
 let g:fern#default_hidden= 1
 let g:fern#scheme#file#show_absolute_path_on_root_label = 1
-let g:fern#renderer = "devicons"
+let g:fern#renderer = "nerdfont"
 
 autocmd FileType fern call s:fern_my_settings()
 function! s:fern_my_settings() abort

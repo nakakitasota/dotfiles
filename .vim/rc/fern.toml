@@ -4,8 +4,9 @@ on_cmd = 'Fern'
 hook_add = 'source ~/.vim/rc/fern.rc.vim'
 
 [[plugins]]
-repo = 'lambdalisue/vim-fern-renderer-devicons'
+repo = 'lambdalisue/vim-fern-renderer-nerdfont'
 on_source = 'vim-fern'
+depends = 'vim-nerdfont'
 
 [[plugins]]
 repo = 'lambdalisue/vim-fern-git-status'
