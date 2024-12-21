@@ -1,3 +1,4 @@
+" hook_add {{{
 nnoremap <silent>sf :<C-u>Fern %:h -reveal=%:p<CR>
 
 let g:fern#disable_default_mappings = 1
@@ -52,3 +53,4 @@ function! s:fern_my_settings() abort
     nnoremap <silent><buffer><expr> k
     \ line('.') == 1 ? 'G' : 'k'
 endfunction
+" }}}

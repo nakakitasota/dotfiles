@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'lambdalisue/vim-fern'
 on_cmd = 'Fern'
-hook_add = 'source ~/.vim/rc/fern.rc.vim'
+hooks_file = '~/.vim/rc/fern.hooks.vim'
 
 [[plugins]]
 repo = 'lambdalisue/vim-fern-renderer-nerdfont'

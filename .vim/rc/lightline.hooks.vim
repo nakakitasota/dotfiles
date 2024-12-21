@@ -1,3 +1,4 @@
+" hook_add {{{
 let g:lightline = {
     \ 'colorscheme': 'nightfly',
     \ 'mode_map': {'c': 'NORMAL'},
@@ -47,3 +48,4 @@ function! LightlineCocStatus() abort
 endfunction
 
 set noshowmode
+" }}}

@@ -2,7 +2,7 @@
 repo = 'Shougo/ddc.vim'
 depends = 'denops.vim'
 on_event = ['InsertEnter', 'CmdlineEnter']
-hook_source = 'source ~/.vim/rc/ddc.rc.vim'
+hooks_file = '~/.vim/rc/ddc.hooks.vim'
 
 [[plugins]]
 repo = 'Shougo/pum.vim'
