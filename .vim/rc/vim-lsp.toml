@@ -1,6 +1,0 @@
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-on_event = ['BufReadPost', 'BufNewFile']
-build = './install.sh nightly'
-hook_source = 'source ~/.vim/rc/coc.rc.vim'
-merged = false

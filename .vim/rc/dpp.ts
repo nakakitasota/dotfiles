@@ -37,18 +37,25 @@ export class Config extends BaseConfig {
         if (tomlExt) {
             const action = tomlExt.actions.load;
 
-            const tomlPromises = [
+            const tomlFiles = [
                 { path: `${BASE_DIR}/dpp.toml`, lazy: false },
                 { path: `${BASE_DIR}/non_lazy.toml`, lazy: false },
                 { path: `${BASE_DIR}/lazy.toml`, lazy: true },
                 { path: `${BASE_DIR}/fern.toml`, lazy: true },
                 { path: `${BASE_DIR}/ddu.toml`, lazy: true },
                 { path: `${BASE_DIR}/ddc.toml`, lazy: true },
-                {
-                    path: hasNvim ? `${BASE_DIR}/nvim-lsp.toml` : `${BASE_DIR}/vim-lsp.toml`,
-                    lazy: true
-                },
-            ].map((tomlFile) => {
+            ];
+
+            if (hasNvim) {
+                tomlFiles.push(
+                    {
+                        path: `${BASE_DIR}/nvim-lsp.toml`,
+                        lazy: true
+                    },
+                );
+            }
+
+            const tomlPromises = tomlFiles.map((tomlFile) => {
                 return action.callback({
                     denops: args.denops,
                     context,
