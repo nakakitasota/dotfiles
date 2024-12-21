@@ -263,6 +263,8 @@ alias ..='c ../'
 alias back='pushd'
 alias diff='diff -U1'
 
+alias rgh='rg --hidden'
+
 if builtin command -v exa > /dev/null; then
     alias ls='exa --icons'
     alias ll='exa --icons -l'
