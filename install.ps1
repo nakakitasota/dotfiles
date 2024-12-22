@@ -11,6 +11,10 @@ function Install-Dotfiles {
     foreach ($f in $DOTFILES) {
         New-Item -ItemType SymbolicLink -Path $HOME -Value $($f.FullName) -Name $($f.Name) -Force
     }
+
+    # Vim
+    New-Item -ItemType SymbolicLink -Path $HOME -Value (Join-Path -Path $env:USERPROFILE -ChildPath .vim\vimrc) -Name "_vimrc" -Force
+    New-Item -ItemType SymbolicLink -Path $HOME -Value (Join-Path -Path $env:USERPROFILE -ChildPath .vim\gvimrc) -Name "_gvimrc" -Force
 }
 
 function Install-XDG {
