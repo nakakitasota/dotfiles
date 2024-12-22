@@ -39,3 +39,31 @@ hook_add = '''
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hooks_file = '~/.vim/rc/lightline.hooks.vim'
+
+[[plugins]]
+repo = 'josa42/nvim-lightline-lsp'
+if = 'has("nvim")'
+hook_source = '''
+    let g:lightline.component_expand = {
+    \   'lsp_warnings': 'lightline#lsp#warnings',
+    \   'lsp_errors': 'lightline#lsp#errors',
+    \   'lsp_info': 'lightline#lsp#info',
+    \   'lsp_hints': 'lightline#lsp#hints',
+    \   'lsp_ok': 'lightline#lsp#ok',
+    \   'status': 'lightline#lsp#status',
+    \ }
+
+    let g:lightline.component_type = {
+    \   'lsp_warnings': 'warning',
+    \   'lsp_errors': 'error',
+    \   'lsp_info': 'info',
+    \   'lsp_hints': 'info',
+    \   'lsp_ok': 'info',
+    \ }
+
+    let g:lightline#lsp#indicator_warnings = ' '
+    let g:lightline#lsp#indicator_errors = ' '
+    let g:lightline#lsp#indicator_info = ' '
+    let g:lightline#lsp#indicator_hints = ' '
+    let g:lightline#lsp#indicator_ok = '✓ '
+'''
