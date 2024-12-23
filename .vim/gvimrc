@@ -11,11 +11,11 @@ set guioptions-=b
 
 " font
 if has("win64")
-    set guifont=HackgenNerd\ Console:h12
+    set guifont=HackGen\ Console\ NF:h12
 elseif has("mac")
-    set guifont=HackgenNerd\ Console:h16
+    set guifont=HackGen\ Console\ NF:h16
 elseif has("linux")
-    set guifont=HackgenNerd\ Console\ 14
+    set guifont=HackGen\ Console\ NF\ 14
 endif
 
 " input method control
