@@ -37,7 +37,7 @@ repo = 'hrsh7th/vim-vsnip'
 [[plugins]]
 repo = 'matsui54/denops-signature_help'
 depends = 'denops.vim'
-on_event = 'InsertEnter'
+on_event = 'LspAttach'
 hook_source = '''
     call signature_help#enable()
 '''
