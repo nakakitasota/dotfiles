@@ -2,6 +2,14 @@
 repo = 'neovim/nvim-lspconfig'
 on_event = ['BufReadPost', 'BufNewFile']
 on_cmd = ['LspInfo', 'LspInstall', 'LspUninstall']
+lua_source = '''
+    local nvim_lsp = require('lspconfig')
+    local capabilities = require("ddc_source_lsp").make_client_capabilities()
+
+    nvim_lsp.dartls.setup({
+        capabilities = capabilities,
+    })
+'''
 
 [[plugins]]
 repo = 'williamboman/mason.nvim'
