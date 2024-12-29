@@ -29,6 +29,11 @@ on_source = 'ddc.vim'
 depends = 'vim-vsnip'
 
 [[plugins]]
+repo = 'uga-rosa/ddc-source-vsnip'
+on_source = 'ddc.vim'
+depends = 'vim-vsnip'
+
+[[plugins]]
 repo = 'Shougo/ddc-source-around'
 on_source = 'ddc.vim'
 

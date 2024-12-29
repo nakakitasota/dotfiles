@@ -1,7 +1,7 @@
 " hook_source {{{
 call ddc#custom#patch_global('ui', 'pum')
 call ddc#custom#patch_global('sources', [
-    \ 'lsp', 'around', 'file'])
+    \ 'lsp', 'vsnip', 'around', 'file'])
 
 call ddc#custom#patch_global('sourceOptions', {
     \ '_': {
