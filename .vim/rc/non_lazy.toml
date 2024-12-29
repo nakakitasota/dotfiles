@@ -28,9 +28,6 @@ repo = 'airblade/vim-gitgutter'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'honza/vim-snippets'
-
-[[plugins]]
 repo = 'Yggdroot/indentLine'
 hook_add = '''
     let g:indentLine_faster = 1

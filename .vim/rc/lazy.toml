@@ -35,6 +35,10 @@ on_path = '\.ipynb$'
 repo = 'hrsh7th/vim-vsnip'
 
 [[plugins]]
+repo = 'rafamadriz/friendly-snippets'
+on_source = 'vim-vsnip'
+
+[[plugins]]
 repo = 'matsui54/denops-signature_help'
 depends = 'denops.vim'
 on_event = 'LspAttach'
