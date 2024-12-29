@@ -5,6 +5,7 @@ call ddc#custom#patch_global('sources', [
 
 call ddc#custom#patch_global('sourceOptions', {
     \ '_': {
+    \   'ignoreCase': v:true,
     \   'matchers': ['matcher_head'],
     \   'sorters': ['sorter_rank'],
     \   'minAutoCompleteLength': 1,
