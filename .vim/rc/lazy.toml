@@ -32,8 +32,17 @@ repo = 'jupyter-vim/jupyter-vim'
 on_path = '\.ipynb$'
 
 [[plugins]]
+repo = 'lewis6991/gitsigns.nvim'
+on_event = ['BufRead', 'BufWrite']
+if = 'has("nvim")'
+lua_source = '''
+    require('gitsigns').setup()
+'''
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter'
 on_event = ['BufRead', 'BufWrite']
+if = '!has("nvim")'
 hook_source = '''
     let g:gitgutter_sign_added = '┃'
     let g:gitgutter_sign_modified = '┃'
