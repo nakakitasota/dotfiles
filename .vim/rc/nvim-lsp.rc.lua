@@ -30,3 +30,14 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
     }
 )
 vim.diagnostic.config({ float = { border = "single" } })
+
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "▶︎",
+            [vim.diagnostic.severity.WARN]  = "▶︎",
+            [vim.diagnostic.severity.INFO]  = "▶︎",
+            [vim.diagnostic.severity.HINT]  = "▶︎",
+        },
+    },
+})
