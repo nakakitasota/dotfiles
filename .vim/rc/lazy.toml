@@ -32,6 +32,15 @@ repo = 'jupyter-vim/jupyter-vim'
 on_path = '\.ipynb$'
 
 [[plugins]]
+repo = 'airblade/vim-gitgutter'
+on_event = ['BufRead', 'BufWrite']
+hook_source = '''
+    let g:gitgutter_sign_added = '┃'
+    let g:gitgutter_sign_modified = '┃'
+    let g:gitgutter_sign_modified_removed = '~'
+'''
+
+[[plugins]]
 repo = 'hrsh7th/vim-vsnip'
 
 [[plugins]]
