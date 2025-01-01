@@ -4,6 +4,7 @@ repo = 'vim-denops/denops.vim'
 [[plugins]]
 repo = 'bluz71/vim-nightfly-guicolors'
 hook_add = '''
+    let g:nightflyNormalFloat = v:true
     let g:nightflyWinSeparator = 2
 
     if !has("gui")
@@ -13,6 +14,11 @@ hook_add = '''
     if has("nvim")
         set fillchars=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┨,vertright:┣,verthoriz:╋
     endif
+
+    augroup CustomHighlight
+        autocmd!
+        autocmd ColorScheme nightfly highlight FloatBorder guifg=#4b6479
+    augroup END
 '''
 
 [[plugins]]

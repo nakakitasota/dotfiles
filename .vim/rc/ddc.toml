@@ -12,9 +12,13 @@ hook_source = '''
 
     call pum#set_option(#{
     \     auto_select: v:true,
+    \     border: "single",
     \     commit_characters: ["."],
+    \     highlight_matches: "SpecialKey",
+    \     highlight_normal_menu: "Normal",
+    \     highlight_selected: "CursorLine",
     \     padding: v:true,
-    \     scrollbar_char: "│",
+    \     scrollbar_char: "┃",
     \ })
 '''
 

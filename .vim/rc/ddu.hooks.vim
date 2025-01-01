@@ -55,9 +55,6 @@ call ddu#custom#patch_global({
     \             "previewRow": float2nr((&lines - (&lines * s:ddu_win_height_percent)) / 2 + 1),
     \             "autoAction": { "name": "preview", "delay": 0},
     \             "startAutoAction": v:true,
-    \             "highlights": {
-    \                 "floating": "Normal"
-    \             }
     \         }
     \     }
     \ })

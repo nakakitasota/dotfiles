@@ -81,6 +81,9 @@ au FileType text setlocal wrap
 source ~/.vim/rc/options.rc.vim
 source ~/.vim/rc/keymaps.rc.vim
 source ~/.vim/rc/python.rc.vim
+if has('nvim')
+    source ~/.vim/rc/nvim-lsp.rc.lua
+endif
 
 " ------------------------------------
 " Colors

@@ -17,7 +17,11 @@ depends = 'nvim-lspconfig'
 on_event = 'FileType'
 on_cmd = 'Mason'
 lua_source = '''
-    require('mason').setup()
+    require('mason').setup({
+        ui = {
+            border = "single",
+        }
+    })
 '''
 
 [[plugins]]
