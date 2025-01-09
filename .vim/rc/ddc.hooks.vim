@@ -31,6 +31,13 @@ call ddc#custom#patch_global('sourceParams', {
     \     }),
     \     'enableResolveItem': v:true,
     \     'enableAdditionalTextEdit': v:true,
+    \ },
+    \ 'file': {
+    \     'displayFile': '',
+    \     'displayDir': '',
+    \     'displaySym': '',
+    \     'displaySymFile': '',
+    \     'displaySymDir': '',
     \ }})
 
 call ddc#custom#patch_global(#{
