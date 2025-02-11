@@ -15,6 +15,10 @@ call ddc#custom#patch_global('sourceOptions', {
     \   'mark': 'L',
     \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
     \ },
+    \ 'vsnip': {
+    \   'converters': ['converter_kind_labels'],
+    \   'mark': 'V',
+    \ },
     \ 'around': {
     \   'mark': 'A',
     \ },
