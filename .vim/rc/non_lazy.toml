@@ -17,7 +17,8 @@ hook_add = '''
 
     augroup CustomHighlight
         autocmd!
-        autocmd ColorScheme nightfly highlight FloatBorder guifg=#4b6479
+        autocmd ColorScheme nightfly highlight clear FloatBorder
+        autocmd ColorScheme nightfly highlight link FloatBorder NightflyMalibu
     augroup END
 '''
 
