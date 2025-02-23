@@ -18,7 +18,7 @@ UI font
 /* --------------------------------
 Toolbar
 -------------------------------- */
-#main-window[tabsintitlebar="true"]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
+#main-window[customtitlebar]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
     margin-top: -25px;
     margin-right: 140px;
     padding-left: 32px !important;
@@ -27,7 +27,7 @@ Toolbar
     background-image: url("chrome://branding/content/icon16.png") !important;
 }
 
-#main-window[tabsintitlebar="true"]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar {
+#main-window[customtitlebar]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar {
     max-height: 27px !important;
 }
 

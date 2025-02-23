@@ -3,11 +3,11 @@
 @import "./userChrome-common.css";
 
 /* ツールバー */
-#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
+#main-window[customtitlebar]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
     margin-top: -36px;
 }
 
-#main-window:not([inFullscreen]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
+#main-window[customtitlebar]:not([inFullscreen]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
     padding-left: 80px !important;
 }
 

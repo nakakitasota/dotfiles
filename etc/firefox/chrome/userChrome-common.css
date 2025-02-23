@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 /* タブ */
-#main-window[tabsintitlebar="true"]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar > .toolbar-items {
-    opacity: 0;
-    pointer-events: none;
+#main-window:not([customtitlebar]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar {
+    visibility: collapse !important;
 }
 
-#main-window:not([tabsintitlebar="true"]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar {
-    visibility: collapse !important;
+#main-window[customtitlebar]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar > .toolbar-items {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* サイドバー */
