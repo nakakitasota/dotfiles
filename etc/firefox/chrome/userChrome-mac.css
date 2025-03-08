@@ -2,17 +2,8 @@
 
 @import "./userChrome-common.css";
 
-/* ツールバー */
-#main-window[customtitlebar]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
-    margin-top: -36px;
-}
-
-#main-window[customtitlebar]:not([inFullscreen]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #nav-bar {
-    padding-left: 80px !important;
-}
-
-#main-window:not([inFullscreen]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) .titlebar-buttonbox-container{
-    margin-bottom: 8px !important;
+#main-window[customtitlebar]:has(#vertical-tabs[collapsed="false"]) .titlebar-buttonbox-container{
+    padding-right: var(--toolbar-start-end-padding) !important;
 }
 
 #TabsToolbar, #titlebar, #nav-bar, #TabsToolbar .tabbrowser-tab[selected], #PersonalToolbar{

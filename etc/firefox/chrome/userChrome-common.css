@@ -15,9 +15,12 @@
     visibility: collapse !important;
 }
 
-/* タイトルバー */
-.titlebar-spacer[type="pre-tabs"] {
-    border: none !important;
+#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #sidebar-main {
+    visibility: collapse;
+}
+
+#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #sidebar-box {
+	padding-inline-start: var(--space-small) !important;
 }
 
 /* ナビゲーションバー */
@@ -26,33 +29,32 @@
     filter: grayscale(100%);
 }
 
-#nav-bar {
+#main-window[uidensity="compact"] #nav-bar {
     height: 27px !important;
 }
 
-#nav-bar toolbarbutton {
+#main-window[uidensity="compact"] #nav-bar toolbarbutton {
     max-height: 27px !important;
     --toolbarbutton-inner-padding: 4px !important;
 }
 
-#nav-bar #back-button {
-    -moz-padding-start: 0px !important;
+#vertical-spacer {
+    visibility: collapse;
 }
 
 /* アドレスバー */
 #urlbar:not([breakout-extend="true"]) > #urlbar-background, #searchbar {
-    min-height: 24px !important;
-    height: 24px !important;
-    margin-top: 0px !important;
-    margin-right: 0px !important;
-    padding-top: 1px !important;
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
 }
 
-#urlbar-container, #search-container {
-    padding-block: 0 !important;
+#main-window[uidensity="compact"] #urlbar:not([breakout-extend="true"]) > #urlbar-background, #searchbar {
+    min-height: 24px !important;
+    height: 24px !important;
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+    padding-top: 1px !important;
 }
 
 /* ブックマークツールバー */
