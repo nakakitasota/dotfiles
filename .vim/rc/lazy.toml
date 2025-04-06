@@ -132,3 +132,7 @@ EOF
 
 [[plugins]]
 repo = 'lambdalisue/vim-nerdfont'
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+if = 'has("nvim")'
