@@ -6,6 +6,16 @@ lua_source = '''
     local nvim_lsp = require('lspconfig')
     local capabilities = require("ddc_source_lsp").make_client_capabilities()
 
+    nvim_lsp.eslint.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = bufnr,
+                command = "EslintFixAll",
+            })
+        end,
+    })
+
     nvim_lsp.dartls.setup({
         capabilities = capabilities,
     })
@@ -52,8 +62,6 @@ lua_source = '''
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     null_ls.setup {
         sources = {
-            require("none-ls.diagnostics.eslint"),
-            require("none-ls.code_actions.eslint"),
             null_ls.builtins.formatting.prettier,
         },
         on_attach = function(client, bufnr)
