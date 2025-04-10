@@ -57,11 +57,11 @@
         "interval": 1
     },
     "cpu": {
-        "format": "{usage}%  ",
+        "format": "{usage}%  ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}%  "
+        "format": "{}%  "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -88,14 +88,14 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": ["󰁺 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹 "]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid}  ",
+        "format-wifi": "{essid} 󰖩 ",
         "format-ethernet": "{ipaddr}/{cidr}  󰈀 ",
         "tooltip-format": "{ifname} via {gwaddr}  󰈀 ",
         "format-linked": "{ifname} (No IP)  󰈀 ",
@@ -125,7 +125,7 @@
     "custom/media": {
         "format": "{icon} {0}",
         "format-icons": {
-            "default": "  "
+            "default": "󰝚 "
         },
         "escape": true,
         "exec": "playerctl -F metadata --format '{{ trunc(title, 24) }} / {{ trunc(artist, 12) }}'"
