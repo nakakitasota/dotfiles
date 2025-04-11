@@ -94,9 +94,23 @@ hook_add = '''
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
-repo = 'osyo-manga/vim-precious'
+repo = 'thinca/vim-partedit'
 on_event = 'BufRead'
 depends = 'context_filetype.vim'
+hook_source = '''
+function! s:partedit_context() abort
+    let context = context_filetype#get()
+    if context.range == [[0, 0], [0, 0]]
+        echohl WarningMsg
+        echomsg 'Context is not found'
+        echohl NONE
+        return
+    endif
+    call partedit#start(context.range[0][0], context.range[1][0],
+        \ {'filetype': context.filetype})
+endfunction
+nnoremap <Space>pc <Cmd>call <SID>partedit_context()<CR>
+'''
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
