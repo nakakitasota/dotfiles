@@ -2,6 +2,7 @@
 repo = 'neovim/nvim-lspconfig'
 on_event = ['BufReadPost', 'BufNewFile']
 on_cmd = ['LspInfo', 'LspInstall', 'LspUninstall']
+depends = ['lazydev.nvim']
 lua_source = '''
     local nvim_lsp = require('lspconfig')
     local capabilities = require("ddc_source_lsp").make_client_capabilities()
@@ -82,3 +83,14 @@ lua_source = '''
 [[plugins]]
 repo = 'nvimtools/none-ls-extras.nvim'
 on_source = 'none-ls.nvim'
+
+[[plugins]]
+repo = 'folke/lazydev.nvim'
+on_ft = 'lua'
+lua_source = '''
+    require("lazydev").setup({
+        library = {
+            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        }
+    })
+'''
