@@ -44,6 +44,20 @@ lua_source = '''
     require('mason-lspconfig').setup_handlers({
         function(server_name)
             local nvim_lsp = require('lspconfig')
+
+            local node_root_dir = nvim_lsp.util.root_pattern("package.json")
+            local is_node_repo = node_root_dir(vim.api.nvim_buf_get_name(0)) ~= nil
+
+            if server_name == "ts_ls" then
+                if not is_node_repo then
+                    return
+                end
+            elseif server_name == "denols" then
+                if is_node_repo then
+                    return
+                end
+            end
+
             local capabilities = require("ddc_source_lsp").make_client_capabilities()
             local opts = {
                 capabilities = capabilities,
