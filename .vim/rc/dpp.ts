@@ -1,10 +1,21 @@
-import type { Denops } from "jsr:@denops/std@~7.2.0";
-import { ContextBuilder, ExtOptions, Plugin } from "jsr:@shougo/dpp-vim@~3.0.0/types";
-import { BaseConfig, ConfigReturn } from "jsr:@shougo/dpp-vim@~3.0.0/config";
-import { Protocol } from "jsr:@shougo/dpp-vim@~3.0.0/protocol";
-import { mergeFtplugins } from "jsr:@shougo/dpp-vim@~3.0.0/utils";
-import type { Ext as LazyExt, LazyMakeStateResult, Params as LazyParams } from "jsr:@shougo/dpp-ext-lazy@~1.5.0";
-import type { Ext as TomlExt, Params as TomlParams } from "jsr:@shougo/dpp-ext-toml@~1.3.0";
+import type { Denops } from "jsr:@denops/std@~7.5.0";
+import {
+    ContextBuilder,
+    ExtOptions,
+    Plugin,
+} from "jsr:@shougo/dpp-vim@~4.2.0/types";
+import { BaseConfig, ConfigReturn } from "jsr:@shougo/dpp-vim@~4.2.0/config";
+import { Protocol } from "jsr:@shougo/dpp-vim@~4.2.0/protocol";
+import { mergeFtplugins } from "jsr:@shougo/dpp-vim@~4.2.0/utils";
+import type {
+    Ext as LazyExt,
+    LazyMakeStateResult,
+    Params as LazyParams,
+} from "jsr:@shougo/dpp-ext-lazy@~1.5.0";
+import type {
+    Ext as TomlExt,
+    Params as TomlParams,
+} from "jsr:@shougo/dpp-ext-toml@~1.3.0";
 
 export class Config extends BaseConfig {
     override async config(args: {
@@ -17,7 +28,10 @@ export class Config extends BaseConfig {
         });
 
         const [context, options] = await args.contextBuilder.get(args.denops);
-        const protocols = await args.denops.dispatcher.getProtocols() as Record<string, Protocol>;
+        const protocols = await args.denops.dispatcher.getProtocols() as Record<
+            string,
+            Protocol
+        >;
         const BASE_DIR = "~/.vim/rc";
         const hasNvim = args.denops.meta.host === "nvim";
 
@@ -50,7 +64,7 @@ export class Config extends BaseConfig {
                 tomlFiles.push(
                     {
                         path: `${BASE_DIR}/nvim-lsp.toml`,
-                        lazy: true
+                        lazy: true,
                     },
                 );
             }
@@ -66,9 +80,9 @@ export class Config extends BaseConfig {
                     actionParams: {
                         path: tomlFile.path,
                         options: {
-                            lazy: tomlFile.lazy
-                        }
-                    }
+                            lazy: tomlFile.lazy,
+                        },
+                    },
                 });
             });
             const tomls = await Promise.all(tomlPromises);
