@@ -2,12 +2,11 @@ import { BaseConfig, ConfigArguments } from "jsr:@shougo/ddc-vim@~9.4.0/config";
 
 export class Config extends BaseConfig {
     override async config(args: ConfigArguments): Promise<void> {
-        const sources = [
-            "lsp",
-            "vsnip",
-            "around",
-            "file",
-        ];
+        const hasNvim = args.denops.meta.host === "nvim";
+
+        const sources = hasNvim
+            ? ["lsp", "vsnip", "around", "file"]
+            : ["vsnip", "around", "file"];
 
         args.contextBuilder.patchGlobal({
             ui: "pum",
