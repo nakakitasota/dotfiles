@@ -81,12 +81,12 @@ call ddc#custom#patch_filetype(
     \ ['ps1', 'dosbatch', 'autohotkey', 'registry'], {
     \ 'sourceOptions': {
     \   'file': {
-    \     'forceCompletionPattern': '\S\/\S*',
+    \     'forceCompletionPattern': '\S\\\S*',
     \   },
     \ },
     \ 'sourceParams': {
     \   'file': {
-    \     'mode': 'unix',
+    \     'mode': 'win32',
     \   },
     \ }})
 
