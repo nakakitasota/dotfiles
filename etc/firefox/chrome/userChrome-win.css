@@ -6,13 +6,7 @@
 UI font
 -------------------------------- */
 * {
-    font-family: "Segoe UI", "游ゴシック" !important;
-    font-weight: 500;
-}
-
-/* adjust vertical align for Segoe UI */
-#urlbar-input, #identity-icon-label {
-    padding-bottom: 3px !important;
+    font-family: "Noto Sans JP" !important;
 }
 
 /* --------------------------------
