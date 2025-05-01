@@ -12,6 +12,7 @@ hook_add = '''
     endif
 
     if has("nvim")
+        set winborder=single
         set fillchars=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┨,vertright:┣,verthoriz:╋
     endif
 
