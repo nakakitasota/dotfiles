@@ -1,5 +1,5 @@
 {
-    "height": 32, // Waybar height (to be removed for auto height)
+    "height": 26, // Waybar height (to be removed for auto height)
     "modules-left": ["sway/workspaces", "hyprland/workspaces", "sway/mode", "sway/window", "hyprland/window"],
     "modules-center": [],
     "modules-right": ["custom/media", "network", "cpu", "memory", "pulseaudio", "battery", "battery#bat2", "clock", "tray"],

@@ -14,6 +14,10 @@ window#waybar {
     transition-duration: .5s;
 }
 
+#workspaces * {
+    all: unset;
+}
+
 #workspaces {
     font-family: Roboto;
     padding-left: 12px;
@@ -23,7 +27,7 @@ window#waybar {
 #workspaces button {
     color: @fg_color_with_opacity;
     margin: 2px 0;
-    padding: 0;
+    padding: 0 3px;
     border: 1px solid transparent;
     border-radius: 4px;
 }
