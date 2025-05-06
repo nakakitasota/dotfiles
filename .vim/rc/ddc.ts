@@ -20,6 +20,8 @@ export class Config extends BaseConfig {
                 },
                 lsp: {
                     converters: ["converter_kind_labels"],
+                    matchers: ["matcher_fuzzy"],
+                    sorters: ["sorter_fuzzy"],
                     mark: "L",
                     forceCompletionPattern: String.raw`\.\w*|:\w*|->\w*`,
                 },

@@ -58,6 +58,10 @@ repo = 'Shougo/ddc-converter_remove_overlap'
 on_source = 'ddc.vim'
 
 [[plugins]]
+repo = 'tani/ddc-fuzzy'
+on_source = 'ddc.vim'
+
+[[plugins]]
 repo = 'matsui54/denops-popup-preview.vim'
 on_source = 'ddc.vim'
 hook_source = '''
