@@ -28,6 +28,7 @@ window#waybar {
     color: @fg_color_with_opacity;
     font-size: 12px;
     margin: 2px 0;
+    padding-left: 1px;
     min-width: 16px;
     border: 1px solid transparent;
 }
