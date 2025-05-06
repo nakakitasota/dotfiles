@@ -21,9 +21,12 @@ call ddu#custom#patch_global({
     \             "ignoreCase": v:true
     \         },
     \         "file_rec": {
+    \             "matchers": ["matcher_fzf"],
+    \             "sorters": ["sorter_fzf"],
     \             "converters": ["converter_devicon"]
     \         },
     \         "file_old": {
+    \             "matchers": ["matcher_fzf"],
     \             "converters": ["converter_devicon"]
     \         },
     \     },
