@@ -26,10 +26,10 @@ window#waybar {
 
 #workspaces button {
     color: @fg_color_with_opacity;
+    font-size: 12px;
     margin: 2px 0;
-    padding: 0 3px;
+    min-width: 16px;
     border: 1px solid transparent;
-    border-radius: 4px;
 }
 
 #workspaces button:hover {
@@ -48,10 +48,10 @@ window#waybar {
 }
 
 #mode {
+    font-size: 12px;
     margin: 2px 0;
     padding: 0 8px;
     border: 1px solid @accent_color;
-    border-radius: 4px;
     font-family: Roboto;
     color: @accent_color;
 }
