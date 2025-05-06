@@ -13,7 +13,7 @@ user_pref("signon.rememberSignons", false); // 標準のパスワードマネー
 user_pref("privacy.trackingprotection.enabled", true); // トラッキング保護を常に有効化
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true); // トラッキング保護を厳格に設定
 user_pref("privacy.donottrackheader.enabled", true); // DoNotTrackヘッダを送信
-// user_pref("browser.uidensity", 1); // UI密度設定「コンパクト」を使用
+user_pref("browser.compactmode.show", true); // show 'compact mode' option in customize panel
 user_pref("browser.newtabpage.enabled", false); // 新しいタブを空白ページにする
 
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // ユーザースタイルを有効化
