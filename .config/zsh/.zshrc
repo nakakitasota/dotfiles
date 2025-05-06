@@ -36,10 +36,6 @@ path=(
     $ANDROID_HOME/platform-tools(N-/)
 )
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
 # fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp --preview-window sharp"
 
@@ -51,6 +47,9 @@ elif builtin command -v vim > /dev/null; then
 else
     export EDITOR='vi'
 fi
+
+# mise
+eval "$(mise activate zsh)"
 
 
 ################################
