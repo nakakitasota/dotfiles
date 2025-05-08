@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         vim.keymap.set('n', '[LSP]r', '<cmd>lua vim.lsp.buf.rename()<CR>')
         vim.keymap.set('n', '[LSP]a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-        vim.keymap.set('n', '[LSP]f',     '<cmd>lua vim.lsp.buf.formatting()<CR>')
+        vim.keymap.set('n', '[LSP]f', '<cmd>lua vim.lsp.buf.format()<CR>')
         vim.keymap.set('n', 'K',      '<cmd>lua vim.lsp.buf.hover()<CR>')
         vim.keymap.set('n', 'gr',     '<cmd>lua vim.lsp.buf.references()<CR>')
         vim.keymap.set('n', 'gd',     '<cmd>lua vim.lsp.buf.definition()<CR>')

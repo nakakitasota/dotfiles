@@ -31,6 +31,11 @@ on_source = 'ddc.vim'
 repo = 'Shougo/ddc-source-lsp'
 on_source = 'ddc.vim'
 depends = 'vim-vsnip'
+lua_source = '''
+    vim.lsp.config('*', {
+        capabilities = require("ddc_source_lsp").make_client_capabilities()
+    })
+'''
 
 [[plugins]]
 repo = 'uga-rosa/ddc-source-vsnip'

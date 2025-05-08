@@ -5,27 +5,33 @@ on_cmd = ['LspInfo', 'LspInstall', 'LspUninstall']
 depends = ['lazydev.nvim']
 lua_source = '''
     local nvim_lsp = require('lspconfig')
-    local capabilities = require("ddc_source_lsp").make_client_capabilities()
 
-    nvim_lsp.eslint.setup({
-        capabilities = capabilities,
-        on_attach = function(client, bufnr)
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer = bufnr,
-                command = "EslintFixAll",
-            })
-        end,
-    })
+    -- dartls
+    vim.lsp.enable('dartls')
 
-    nvim_lsp.dartls.setup({
-        capabilities = capabilities,
+    -- eslint
+    -- Install it with npm i -g vscode-langservers-extracted
+    vim.lsp.config('eslint', {
+        settings = {
+            codeActionOnSave = {
+                enable = true,
+            }
+        }
     })
+    vim.lsp.enable('eslint')
+
+    -- ts_ls / denols
+    local node_root_dir = nvim_lsp.util.root_pattern("package.json")
+    local is_node_repo = node_root_dir(vim.api.nvim_buf_get_name(0)) ~= nil
+    if is_node_repo then
+        vim.lsp.enable('ts_ls')
+    else
+        vim.lsp.enable('denols')
+    end
 '''
 
 [[plugins]]
 repo = 'williamboman/mason.nvim'
-depends = 'nvim-lspconfig'
-on_event = 'FileType'
 on_cmd = 'Mason'
 lua_source = '''
     require('mason').setup({
@@ -38,33 +44,15 @@ lua_source = '''
 [[plugins]]
 repo = 'williamboman/mason-lspconfig.nvim'
 on_source = 'nvim-lspconfig'
-depends = ['mason.nvim', 'ddc-source-lsp']
+depends = 'mason.nvim'
 lua_source = '''
-    require("mason-lspconfig").setup()
-    require('mason-lspconfig').setup_handlers({
-        function(server_name)
-            local nvim_lsp = require('lspconfig')
-
-            local node_root_dir = nvim_lsp.util.root_pattern("package.json")
-            local is_node_repo = node_root_dir(vim.api.nvim_buf_get_name(0)) ~= nil
-
-            if server_name == "ts_ls" then
-                if not is_node_repo then
-                    return
-                end
-            elseif server_name == "denols" then
-                if is_node_repo then
-                    return
-                end
-            end
-
-            local capabilities = require("ddc_source_lsp").make_client_capabilities()
-            local opts = {
-                capabilities = capabilities,
+    require("mason-lspconfig").setup({
+        automatic_enable = {
+            exclude = {
+                "denols",
+                "ts_ls"
             }
-
-            nvim_lsp[server_name].setup(opts)
-        end
+        }
     })
 '''
 
