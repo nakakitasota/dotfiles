@@ -9,6 +9,7 @@ user_pref("browser.tabs.loadInBackground", true); // 新しいタブを裏で開
 user_pref("app.update.auto", false); // Firefox本体の自動アップデートに抵抗
 user_pref("browser.search.update", false); // 検索エンジンの自動アップデートに抵抗
 user_pref("browser.search.suggest.enabled", false); // アドレスバーへの入力時に検索候補を表示しない
+user_pref("browser.urlbar.suggest.recentsearches", false); // Disable search history suggestions in the URL bar
 user_pref("signon.rememberSignons", false); // 標準のパスワードマネージャーを無効化
 user_pref("privacy.trackingprotection.enabled", true); // トラッキング保護を常に有効化
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true); // トラッキング保護を厳格に設定
