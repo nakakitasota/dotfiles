@@ -55,3 +55,12 @@ imap <C-e> <End>
 imap <C-h> <BS>
 imap <C-d> <Del>
 imap <C-y> <esc>pa
+
+" Use Emacs key bindings in insert mode
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-a> <home>
+cnoremap <C-e> <End>
+cnoremap <C-d> <Del>
+cnoremap <C-k> <C-\>estrpart(getcmdline(),0,getcmdpos()-1)<CR>
+cnoremap <C-y> <C-r>"
