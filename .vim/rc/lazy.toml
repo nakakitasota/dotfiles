@@ -67,12 +67,16 @@ hook_source = '''
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
-hook_post_source = '''
+hook_source = '''
     let g:lexima_no_default_rules = 1
     call lexima#set_default_rules()
-    execute printf("inoremap <expr><silent> <CR> pum#visible() ? pum#map#confirm() : lexima#expand(%s, 'i')",
-        \ string(lexima#string#to_mappable('<CR>'))
-        \ )
+    if has("nvim")
+        inoremap <silent><expr> <CR> v:lua.require'cmp'.visible() ? "\<Cmd>lua require('cmp').confirm()\<CR>" :
+        \ "\<C-r>=lexima#expand('<LT>CR>', 'i')\<CR>"
+    else
+        inoremap <silent><expr> <CR> pum#visible() ? "\<Cmd>call pum#map#confirm()\<CR>" :
+        \ "\<C-r>=lexima#expand('<LT>CR>', 'i')\<CR>"
+    endif
 '''
 
 [[plugins]]

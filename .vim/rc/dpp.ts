@@ -57,13 +57,23 @@ export class Config extends BaseConfig {
                 { path: `${BASE_DIR}/lazy.toml`, lazy: true },
                 { path: `${BASE_DIR}/fern.toml`, lazy: true },
                 { path: `${BASE_DIR}/ddu.toml`, lazy: true },
-                { path: `${BASE_DIR}/ddc.toml`, lazy: true },
             ];
 
             if (hasNvim) {
                 tomlFiles.push(
                     {
                         path: `${BASE_DIR}/nvim-lsp.toml`,
+                        lazy: true,
+                    },
+                    {
+                        path: `${BASE_DIR}/nvim-cmp.toml`,
+                        lazy: true,
+                    },
+                );
+            } else {
+                tomlFiles.push(
+                    {
+                        path: `${BASE_DIR}/ddc.toml`,
                         lazy: true,
                     },
                 );
