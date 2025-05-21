@@ -42,6 +42,7 @@ yabai -m config window_gap                   6
 
 # rules
 yabai -m rule --add app="^Simulator$"          manage=off
+yabai -m rule --add title="^Android Emulator.*$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 
 borders active_color=0xff6a9ff9 inactive_color=0x001b2224 width=5.0 &
