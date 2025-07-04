@@ -36,6 +36,12 @@ path=(
     $ANDROID_HOME/platform-tools(N-/)
 )
 
+# Dart bins
+path=(
+    $path
+    $HOME/.pub-cache/bin(N-/)
+)
+
 # fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp --preview-window sharp"
 
