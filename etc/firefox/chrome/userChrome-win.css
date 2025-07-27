@@ -3,13 +3,6 @@
 @import "./userChrome-common.css";
 
 /* --------------------------------
-UI font
--------------------------------- */
-* {
-    font-family: "Noto Sans JP" !important;
-}
-
-/* --------------------------------
 Toolbar
 -------------------------------- */
 #main-window[customtitlebar]:has(#vertical-tabs[collapsed="false"]) #nav-bar {
