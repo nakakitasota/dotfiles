@@ -1,5 +1,4 @@
 show=drun
-lines=6
 prompt=
 allow_images=true
 term=alacritty
