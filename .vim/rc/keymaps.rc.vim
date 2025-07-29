@@ -18,6 +18,7 @@ nnoremap s< <C-w><
 nnoremap s+ <C-w>+
 nnoremap s- <C-w>-
 nnoremap se <C-w>=
+nnoremap sx <C-w>x<C-w>w
 
 " Terminal
 tnoremap <ESC> <C-\><C-n>
