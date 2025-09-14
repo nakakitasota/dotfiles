@@ -19,7 +19,8 @@
             "cursorShape": "filledBox",
             "font": 
             {
-                "face": "HackGen Console NF"
+                "face": "HackGen Console NF",
+                "size": 11
             },
             "opacity": 100,
             "useAcrylic": true
