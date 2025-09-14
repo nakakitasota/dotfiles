@@ -11,7 +11,7 @@ set guioptions-=b
 
 " font
 if has("win64")
-    set guifont=HackGen\ Console\ NF:h12
+    set guifont=HackGen\ Console\ NF:h11
 elseif has("mac")
     set guifont=HackGen\ Console\ NF:h16
 elseif has("linux")
