@@ -57,6 +57,16 @@ fi
 # mise
 eval "$(mise activate zsh)"
 
+# SSH agent
+case ${OSTYPE} in
+    darwin*)
+        export SSH_AUTH_SOCK=/Users/$(whoami)/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+        ;;
+    linux*)
+        export SSH_AUTH_SOCK=/home/$(whoami)/.bitwarden-ssh-agent.sock
+        ;;
+esac
+
 
 ################################
 # Options
