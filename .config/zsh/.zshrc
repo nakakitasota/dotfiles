@@ -63,7 +63,11 @@ case ${OSTYPE} in
         export SSH_AUTH_SOCK=/Users/$(whoami)/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
         ;;
     linux*)
-        export SSH_AUTH_SOCK=/home/$(whoami)/.bitwarden-ssh-agent.sock
+        if [[ "$(uname -r)" == *-microsoft-standard-WSL2 ]]; then
+            eval $(wsl2-ssh-agent)
+        else
+            export SSH_AUTH_SOCK=/home/$(whoami)/.bitwarden-ssh-agent.sock
+        fi
         ;;
 esac
 
