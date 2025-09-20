@@ -43,6 +43,17 @@ function Set-EnvironmentVariables {
     [Environment]::SetEnvironmentVariable("XDG_DATA_HOME", "${HOME}\.local\share", "User")
     [Environment]::SetEnvironmentVariable("XDG_STATE_HOME", "${HOME}\.local\state", "User")
     [Environment]::SetEnvironmentVariable("GIT_SSH", "C:\Windows\System32\OpenSSH\ssh.exe", "User")
+
+    $currentPath = [Environment]::GetEnvironmentVariable('Path', 'User')
+    $xdgDataPath = [Environment]::GetEnvironmentVariable('XDG_DATA_HOME', 'User')
+
+    # Add path to mise shims
+    $miseShimPath = "$xdgDataPath\mise\shims"
+    if (-not ($currentPath.Contains($miseShimPath))) {
+        $newPath = $currentPath + ";" + $miseShimPath
+        [Environment]::SetEnvironmentVariable('Path', $newPath, 'User')
+        Write-Host "Added"
+    }
 }
 
 Install-Dotfiles
