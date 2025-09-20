@@ -9,6 +9,13 @@ endif
 " ------------------------------------
 " Half-width space at the end of a line 
 " 　Full-width space
+"
+" ------------------------------------
+" Denops shared server
+" ------------------------------------
+if has("win32")
+    let g:denops_server_addr = '127.0.0.1:32123'
+endif
 
 " ------------------------------------
 " dpp.vim Plugin manager

@@ -1,4 +1,8 @@
 [[plugins]]
+repo = 'vim-denops/denops-shared-server.vim'
+on_func = ['denops_shared_server#install', 'denops_shared_server#uninstall']
+
+[[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'css']
 hook_add = '''
