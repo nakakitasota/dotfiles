@@ -5,7 +5,7 @@
 /* --------------------------------
 Toolbar
 -------------------------------- */
-#main-window[customtitlebar]:has(#vertical-tabs[collapsed="false"]) #nav-bar {
+#main-window[customtitlebar]:has(#vertical-tabs:not([collapsed])) #nav-bar {
     padding-left: 24px !important;
     background-position: left var(--toolbar-start-end-padding) center;
     background-repeat: no-repeat;
