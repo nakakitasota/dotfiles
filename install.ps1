@@ -37,6 +37,15 @@ function Install-Etc {
     New-Item -ItemType SymbolicLink -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState -Value $DOTPATH\etc\windows\windows-terminal\settings.json -Name settings.json -Force
 }
 
+function Set-EnvironmentVariables {
+    [Environment]::SetEnvironmentVariable("XDG_CONFIG_HOME", "${HOME}\.config", "User")
+    [Environment]::SetEnvironmentVariable("XDG_CACHE_HOME", "${HOME}\.cache", "User")
+    [Environment]::SetEnvironmentVariable("XDG_DATA_HOME", "${HOME}\.local\share", "User")
+    [Environment]::SetEnvironmentVariable("XDG_STATE_HOME", "${HOME}\.local\state", "User")
+    [Environment]::SetEnvironmentVariable("GIT_SSH", "C:\Windows\System32\OpenSSH\ssh.exe", "User")
+}
+
 Install-Dotfiles
 Install-XDG
 Install-Etc
+Set-EnvironmentVariables
