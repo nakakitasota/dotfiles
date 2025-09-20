@@ -11,12 +11,18 @@ user_pref("browser.search.update", false); // 検索エンジンの自動アッ�
 user_pref("browser.search.suggest.enabled", false); // アドレスバーへの入力時に検索候補を表示しない
 user_pref("browser.urlbar.suggest.recentsearches", false); // Disable search history suggestions in the URL bar
 user_pref("signon.rememberSignons", false); // 標準のパスワードマネージャーを無効化
-user_pref("privacy.trackingprotection.enabled", true); // トラッキング保護を常に有効化
-user_pref("privacy.trackingprotection.fingerprinting.enabled", true); // トラッキング保護を厳格に設定
-user_pref("privacy.donottrackheader.enabled", true); // DoNotTrackヘッダを送信
 user_pref("browser.compactmode.show", true); // show 'compact mode' option in customize panel
 user_pref("browser.newtabpage.enabled", false); // 新しいタブを空白ページにする
-
+user_pref("privacy.annotate_channels.strict_list.enabled", true);
+user_pref("privacy.bounceTrackingProtection.mode", 1);
+user_pref("privacy.fingerprintingProtection", true);
+user_pref("privacy.query_stripping.enabled", true);
+user_pref("privacy.query_stripping.enabled.pbmode", true);
+user_pref("privacy.trackingprotection.allow_list.convenience.enabled", false);
+user_pref("privacy.trackingprotection.consentmanager.skip.pbmode.enabled", false);
+user_pref("privacy.trackingprotection.emailtracking.enabled", true);
+user_pref("privacy.trackingprotection.enabled", true);
+user_pref("privacy.trackingprotection.socialtracking.enabled", true);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // ユーザースタイルを有効化
 user_pref("beacon.enabled", false); // ビーコンを無効化
 user_pref("browser.pocket.enabled", false); // Pocketを無効にする
