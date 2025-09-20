@@ -19,7 +19,10 @@
     visibility: collapse;
 }
 
-#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #sidebar-box {
+#main-window
+:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden]))
+:has(#sidebar-main:not([hidden]))
+#sidebar-box {
 	padding-inline-start: var(--space-small) !important;
 }
 
