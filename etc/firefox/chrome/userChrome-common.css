@@ -1,25 +1,25 @@
 @charset "UTF-8";
 
 /* タブ */
-#main-window:not([customtitlebar]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar {
+#main-window:not([customtitlebar]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #TabsToolbar {
     visibility: collapse !important;
 }
 
-#main-window[customtitlebar]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #TabsToolbar > .toolbar-items {
+#main-window[customtitlebar]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #TabsToolbar > .toolbar-items {
     opacity: 0;
     pointer-events: none;
 }
 
 /* サイドバー */
-#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #sidebar-header {
+#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #sidebar-header {
     visibility: collapse !important;
 }
 
-#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #sidebar-main {
+#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #sidebar-main {
     visibility: collapse;
 }
 
-#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden="true"])) #sidebar-box {
+#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #sidebar-box {
 	padding-inline-start: var(--space-small) !important;
 }
 
