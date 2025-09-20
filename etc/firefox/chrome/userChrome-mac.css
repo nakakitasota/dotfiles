@@ -2,7 +2,7 @@
 
 @import "./userChrome-common.css";
 
-#main-window[customtitlebar]:has(#vertical-tabs[collapsed="false"]) .titlebar-buttonbox-container{
+#main-window[customtitlebar]:has(#vertical-tabs:not([collapsed])) .titlebar-buttonbox-container{
     padding-right: var(--toolbar-start-end-padding) !important;
 }
 
