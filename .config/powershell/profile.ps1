@@ -12,6 +12,7 @@ Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
 $ScriptDir = $PSScriptRoot
 
 oh-my-posh init pwsh --config $ScriptDir\PoshThemes\Paradox-Mod.omp.json | Invoke-Expression
+mise activate pwsh | Out-String | Invoke-Expression
 
 function rmrf {
     <#
