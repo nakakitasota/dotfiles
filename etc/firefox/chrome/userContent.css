@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@media (-moz-platform: windows) {
+    @font-face {
+        font-family: "メイリオ";
+        src: local("Noto Sans JP");
+    }
+
+    @font-face {
+        font-family: "Meiryo";
+        src: local("Noto Sans JP");
+    }
+}
