@@ -46,13 +46,13 @@
 }
 
 /* アドレスバー */
-#urlbar:not([breakout-extend="true"]) > #urlbar-background, #searchbar {
+#urlbar:not([breakout-extend="true"]) > .urlbar-background, #searchbar {
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
 }
 
-#main-window[uidensity="compact"] #urlbar:not([breakout-extend="true"]) > #urlbar-background, #searchbar {
+#main-window[uidensity="compact"] #urlbar:not([breakout-extend="true"]) > .urlbar-background, #searchbar {
     min-height: 24px !important;
     height: 24px !important;
     margin-top: 0px !important;
