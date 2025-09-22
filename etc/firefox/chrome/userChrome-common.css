@@ -45,13 +45,6 @@
     visibility: collapse;
 }
 
-/* アドレスバー */
-#urlbar:not([breakout-extend="true"]) > .urlbar-background, #searchbar {
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
-}
-
 /* ブックマークツールバー */
 #personal-bookmarks .bookmark-item:not([container]) > .toolbarbutton-text {
     display:none !important;
