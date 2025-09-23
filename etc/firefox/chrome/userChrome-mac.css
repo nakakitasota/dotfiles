@@ -5,7 +5,3 @@
 #main-window[customtitlebar]:has(#vertical-tabs:not([collapsed])) .titlebar-buttonbox-container{
     padding-right: var(--toolbar-start-end-padding) !important;
 }
-
-#TabsToolbar, #titlebar, #nav-bar, #TabsToolbar .tabbrowser-tab[selected], #PersonalToolbar{
-    -moz-appearance: -moz-mac-source-list !important;
-}
