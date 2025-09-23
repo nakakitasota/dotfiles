@@ -9,7 +9,3 @@
 #TabsToolbar, #titlebar, #nav-bar, #TabsToolbar .tabbrowser-tab[selected], #PersonalToolbar{
     -moz-appearance: -moz-mac-source-list !important;
 }
-
-:root[OSXLionFullscreen]:not(:-moz-lwtheme) :is(#navigator-toolbox, #sidebar-box) {
-    background: none !important;
-}
