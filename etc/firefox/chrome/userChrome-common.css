@@ -64,3 +64,10 @@ toolbarbutton.bookmark-item:not([container]):not(.subviewbutton) {
 #urlbar *|input {
     ime-mode: inactive !important;
 }
+
+/* Window Buttons */
+@media (-moz-platform: macos) {
+    #main-window[customtitlebar]:has(#vertical-tabs:not([collapsed])) .titlebar-buttonbox-container{
+        padding-right: var(--toolbar-start-end-padding) !important;
+    }
+}
