@@ -1,13 +1,3 @@
 @charset "UTF-8";
 
 @import "./userChrome-common.css";
-
-/* --------------------------------
-Toolbar
--------------------------------- */
-#main-window[customtitlebar]:has(#vertical-tabs:not([collapsed])) #nav-bar {
-    padding-left: 24px !important;
-    background-position: left var(--toolbar-start-end-padding) center;
-    background-repeat: no-repeat;
-    background-image: url("chrome://branding/content/icon16.png") !important;
-}
