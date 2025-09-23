@@ -10,10 +10,6 @@
     -moz-appearance: -moz-mac-source-list !important;
 }
 
-#TabsToolbar:-moz-lwtheme-brighttext, #titlebar:-moz-lwtheme-brighttext, #nav-bar:-moz-lwtheme-brighttext, #TabsToolbar .tabbrowser-tab[selected]:-moz-lwtheme-brighttext, #PersonalToolbar:-moz-lwtheme-brighttext {
-    -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
-}
-
 :root[OSXLionFullscreen]:not(:-moz-lwtheme) :is(#navigator-toolbox, #sidebar-box) {
     background: none !important;
 }
