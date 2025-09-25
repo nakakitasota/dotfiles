@@ -59,5 +59,5 @@ function Set-EnvironmentVariables {
 Install-Dotfiles
 Install-XDG
 Install-Etc
-. (Join-Path -Path $PSScriptRoot -ChildPath "etc/windows/firefox/Install-FirefoxConfig.ps1") -ProfileSearchPath MSIX -Target All
+. (Join-Path -Path $PSScriptRoot -ChildPath "etc/windows/firefox/Install-FirefoxConfig.ps1") -ProfileSearchPath MSIX -Target All -InstallProfile Default
 Set-EnvironmentVariables

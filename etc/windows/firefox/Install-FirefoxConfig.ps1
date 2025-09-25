@@ -11,24 +11,48 @@ Allowed values: [All, user.js, userChrome.css, userContent.css]
 .PARAMETER ProfileSearchPath
 Specify the search path for the profile directory.
 Allowed values: [Conventional, MSIX]
+
+.PARAMETER InstallProfile
+Specify the profile for the installation destination.
+Allowed values: [Default, Interactive]
 #>
 
 Param(
     [Parameter(Mandatory)][ValidateSet("user.js", "userChrome.css", "userContent.css", "All")][string]$Target,
-    [Parameter(Mandatory)][ValidateSet("Conventional", "MSIX")][string]$ProfileSearchPath
+    [Parameter(Mandatory)][ValidateSet("Conventional", "MSIX")][string]$ProfileSearchPath,
+    [Parameter(Mandatory)][ValidateSet("Default", "Interactive")][string]$InstallProfile
 )
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 $ConfigPath = Join-Path -Path $PSScriptRoot -ChildPath "..\..\firefox" | Convert-Path
-$ProfilePath = {
+$ProfilePath = & {
     $searchPath = $(switch($ProfileSearchPath) {
         "Conventional" {"$Env:APPDATA\Mozilla\Firefox\Profiles" | Convert-Path}
         "MSIX" {"$Env:LOCALAPPDATA\Packages\Mozilla.Firefox_n80bbvh6b1yt2\LocalCache\Roaming\Mozilla\Firefox\Profiles" | Convert-Path}
     })
-    $profilePath = (Get-ChildItem -Path $searchPath -Directory -Filter "*.default-release")[0].FullName
+    $profiles = (Get-ChildItem -Path $searchPath -Directory)
+    $profilePath = $(switch($InstallProfile) {
+        "Default" {($profiles | Where-Object {$_.FullName -clike "*default-release"})[0].FullName}
+        "Interactive" {
+            $title = "$($profiles.Count) profiles found."
+            $message = "Please select the profile for the installation destination:"
+            $options = & {
+                [System.Management.Automation.Host.ChoiceDescription[]]$o = @()
+                for ($i = 0; $i -lt $profiles.Count; $i++) {
+                    $o += New-Object System.Management.Automation.Host.ChoiceDescription("$($profiles[$i].Name)(&$($i))")
+                }
+                $o += New-Object System.Management.Automation.Host.ChoiceDescription("Suspend(&S)")
+                return $o
+            }
+            $defaultChoice = $profiles.Count
+            $result = $Host.UI.PromptForChoice($title, $message, $options, $defaultChoice)
+            if ($result -eq $defaultChoice) { exit }
+            return $profiles[$result].FullName
+        }
+    })
     return $profilePath
-}.Invoke()
+}
 $ChromePath = Join-Path -Path $ProfilePath -ChildPath "chrome"
 
 # Create chrome direcroty in profile if it doesn't exist
