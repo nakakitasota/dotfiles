@@ -1,33 +1,41 @@
 @charset "UTF-8";
 
 /* タブ */
-#main-window:not([customtitlebar]):has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #TabsToolbar {
-    visibility: collapse !important;
-}
+#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #TabsToolbar {
+    @media
+    (-moz-pref("browser.tabs.inTitlebar", 0)) {
+        visibility: collapse !important;
+    }
 
-#main-window[customtitlebar]:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #TabsToolbar > .toolbar-items {
-    opacity: 0;
-    pointer-events: none;
+    @media
+    (-moz-pref("browser.tabs.inTitlebar", 1)) {
+        > .toolbar-items {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
 }
 
 /* サイドバー */
-#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #sidebar-header {
-    visibility: collapse !important;
+#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) {
+    #sidebar-main {
+        visibility: collapse;
+    }
+
+    #sidebar-header {
+        visibility: collapse !important;
+    }
+
+    @media
+    (-moz-pref("sidebar.revamp")) {
+        #sidebar-box {
+            padding-inline-start: var(--space-small) !important;
+        }
+    }
 }
 
 #webextpanels-window > #sidebar-panel-header {
     visibility: collapse !important;
-}
-
-#main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #sidebar-main {
-    visibility: collapse;
-}
-
-#main-window
-:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden]))
-:has(#sidebar-main:not([hidden]))
-#sidebar-box {
-    padding-inline-start: var(--space-small) !important;
 }
 
 /* ナビゲーションバー */
@@ -38,19 +46,22 @@
 
 #main-window[uidensity="compact"] #nav-bar {
     height: 27px !important;
-}
 
-#main-window[uidensity="compact"] #nav-bar toolbarbutton {
-    max-height: 27px !important;
-    --toolbarbutton-inner-padding: 4px !important;
+    & toolbarbutton {
+        max-height: 27px !important;
+        --toolbarbutton-inner-padding: 4px !important;
+    }
 }
 
 #vertical-spacer {
     visibility: collapse;
 }
 
-@media (-moz-platform: windows) {
-    #main-window[customtitlebar]:has(#vertical-tabs:not([collapsed])) #nav-bar {
+@media
+(-moz-platform: windows) and
+(-moz-pref("browser.tabs.inTitlebar", 1)) and
+(-moz-pref("sidebar.verticalTabs")) {
+    #nav-bar {
         padding-left: 24px !important;
         background-position: left var(--toolbar-start-end-padding) center;
         background-repeat: no-repeat;
@@ -59,12 +70,14 @@
 }
 
 /* ブックマークツールバー */
-#personal-bookmarks .bookmark-item:not([container]) > .toolbarbutton-text {
-    display:none !important;
-}
+#personal-bookmarks toolbarbutton.bookmark-item:not([container]) {
+    > .toolbarbutton-text {
+        display:none !important;
+    }
 
-toolbarbutton.bookmark-item:not([container]):not(.subviewbutton) {
-    padding: 0 !important;
+    &:not(.subviewbutton) {
+        padding: 0 !important;
+    }
 }
 
 /* プライベートブラウズ */
@@ -79,8 +92,11 @@ toolbarbutton.bookmark-item:not([container]):not(.subviewbutton) {
 }
 
 /* Window Buttons */
-@media (-moz-platform: macos) {
-    #main-window[customtitlebar]:has(#vertical-tabs:not([collapsed])) .titlebar-buttonbox-container{
+@media
+(-moz-platform: macos) and
+(-moz-pref("browser.tabs.inTitlebar", 1)) and
+(-moz-pref("sidebar.verticalTabs")) {
+    #main-window .titlebar-buttonbox-container{
         padding-right: var(--toolbar-start-end-padding) !important;
     }
 }
