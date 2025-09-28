@@ -4,7 +4,6 @@ Import-Module Terminal-Icons
 Set-PSReadlineOption -BellStyle None
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -PredictionSource History
-Set-PSReadLineKeyHandler -Key "Ctrl+f" -Function ForwardWord
 
 $env:EDITOR="nvim"
 
