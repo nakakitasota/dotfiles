@@ -26,6 +26,10 @@
         visibility: collapse !important;
     }
 
+    #sidebar-button {
+        display: none;
+    }
+
     @media
     (-moz-pref("sidebar.revamp")) {
         #sidebar-box {
