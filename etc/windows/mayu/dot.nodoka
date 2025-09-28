@@ -2,6 +2,23 @@ include "dot.mayu"
 def option FocusChange = enable
 def option mouse-event = true
 
+mod Mod3 += !!XButton1
+mod Mod4 += !!XButton2
+
+key *XButton1 = A-Left
+key M3-RButton = C-W
+key M3-WheelForward = C-S-Tab
+key M3-WheelBackward = C-Tab
+key M3-TiltLeft = A-Left
+key M3-TiltRight = A-Right
+
+key *XButton2 = W-Tab
+key M4-RButton = &WindowClose
+key M4-WheelForward = &WindowMaximize
+key M4-WheelBackward = &WindowMinimize
+key M4-TiltLeft = W-S-Left
+key M4-TiltRight = W-S-Right
+
 keymap Global
 key U-FocusChange = &IconColor(0)
 
