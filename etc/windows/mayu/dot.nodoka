@@ -1,5 +1,6 @@
 include "dot.mayu"
 def option FocusChange = enable
+def option mouse-event = true
 
 keymap Global
 key U-FocusChange = &IconColor(0)
