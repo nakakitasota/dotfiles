@@ -35,6 +35,14 @@
         #sidebar-box {
             padding-inline-start: var(--space-small) !important;
         }
+
+        #sidebar-splitter {
+            transition: all 300ms 30ms ease !important;
+
+            &:not(:hover) {
+                width: var(--space-small) !important;
+            }
+        }
     }
 }
 
