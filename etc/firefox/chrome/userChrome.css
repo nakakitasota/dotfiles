@@ -74,7 +74,8 @@
         padding-left: calc(var(--toolbar-start-end-padding) + 2 * var(--toolbarbutton-inner-padding) + 16px) !important;
         background-position: left var(--toolbar-start-end-padding) center;
         background-repeat: no-repeat;
-        background-image: url("chrome://branding/content/icon16.png") !important;
+        background-image: url("chrome://branding/content/icon32.png") !important;
+        background-size: 16px;
     }
 }
 
