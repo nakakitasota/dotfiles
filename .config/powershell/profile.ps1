@@ -6,6 +6,8 @@ Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineKeyHandler -Key "Ctrl+f" -Function ForwardWord
 
+$env:EDITOR="nvim"
+
 $env:FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp --preview-window sharp"
 Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
 
