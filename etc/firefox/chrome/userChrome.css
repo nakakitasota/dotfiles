@@ -50,10 +50,15 @@
 
 #main-window[uidensity="compact"] #nav-bar {
     height: 27px !important;
+    --toolbarbutton-inner-padding: 4px !important;
 
-    & toolbarbutton {
-        max-height: 27px !important;
-        --toolbarbutton-inner-padding: 4px !important;
+    toolbarbutton.bookmark-item,
+    .toolbaritem-combined-buttons {
+        margin-inline: 0 !important;
+    }
+
+    .toolbarbutton-1 {
+        padding: 0 !important;
     }
 }
 
@@ -66,7 +71,7 @@
 (-moz-pref("browser.tabs.inTitlebar", 1)) and
 (-moz-pref("sidebar.verticalTabs")) {
     #nav-bar {
-        padding-left: 24px !important;
+        padding-left: calc(var(--toolbar-start-end-padding) + 2 * var(--toolbarbutton-inner-padding) + 16px) !important;
         background-position: left var(--toolbar-start-end-padding) center;
         background-repeat: no-repeat;
         background-image: url("chrome://branding/content/icon16.png") !important;
@@ -80,7 +85,9 @@
     }
 
     &:not(.subviewbutton) {
-        padding: 0 !important;
+        > .toolbarbutton-icon {
+            margin-inline-end: 0 !important;
+        }
     }
 }
 
