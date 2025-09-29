@@ -1,0 +1,8 @@
+[tools]
+deno = "latest"
+node = "latest"
+python = "latest"
+usage = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = []
