@@ -80,8 +80,8 @@
 (-moz-pref("browser.tabs.inTitlebar", 1)) and
 (-moz-pref("sidebar.verticalTabs")) {
     #nav-bar {
-        padding-left: calc(var(--toolbar-start-end-padding) * 2 + 16px) !important;
-        background-position: left var(--toolbar-start-end-padding) center;
+        padding-left: calc(2 * var(--toolbarbutton-outer-padding) + 2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+        background-position: left calc(var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)) center;
         background-repeat: no-repeat;
         background-image: url("chrome://branding/content/icon32.png") !important;
         background-size: 16px;
