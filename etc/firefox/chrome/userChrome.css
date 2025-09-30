@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+:root {
+    --custom-toolbarbutton-outer-padding: var(--toolbarbutton-outer-padding);
+    --windows-customtitlebar-start-padding: var(--toolbar-start-end-padding);
+
+    &[uidensity="compact"] {
+        --custom-toolbarbutton-outer-padding: 0px;
+        --windows-customtitlebar-start-padding: 4px;
+    }
+}
+
 /* タブ */
 #main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) #TabsToolbar {
     @media
@@ -66,8 +76,8 @@
     }
 
     .toolbarbutton-1 {
-        padding: 0 !important;
         overflow: visible !important;
+        --toolbarbutton-outer-padding: var(--custom-toolbarbutton-outer-padding) !important;
     }
 }
 
@@ -80,11 +90,27 @@
 (-moz-pref("browser.tabs.inTitlebar", 1)) and
 (-moz-pref("sidebar.verticalTabs")) {
     #nav-bar {
-        padding-left: calc(2 * var(--toolbarbutton-outer-padding) + 2 * var(--toolbarbutton-inner-padding) + 16px) !important;
-        background-position: left calc(var(--toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding)) center;
+        padding-left: calc(var(--windows-customtitlebar-start-padding) + 2 * var(--custom-toolbarbutton-outer-padding) + 2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+        background-position: left calc(var(--custom-toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding) + var(--windows-customtitlebar-start-padding)) center;
         background-repeat: no-repeat;
         background-image: url("chrome://branding/content/icon32.png") !important;
         background-size: 16px;
+    }
+
+    #nav-bar-customization-target {
+        & > :is(toolbarbutton, toolbaritem):first-child,
+        & > toolbarpaletteitem:first-child > :is(toolbarbutton, toolbaritem) {
+            padding-inline-start: 0 !important;
+        }
+    }
+
+    #main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) {
+        #nav-bar-customization-target {
+            & > #sidebar-button:first-child + :is(toolbarbutton, toolbaritem),
+            & > #wrapper-sidebar-button:first-child + toolbarpaletteitem > :is(toolbarbutton, toolbaritem) {
+                padding-inline-start: 0 !important;
+            }
+        }
     }
 }
 
