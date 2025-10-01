@@ -34,8 +34,34 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+if = '!has("nvim")'
 hook_add = '''
     let g:indentLine_faster = 1
+'''
+
+[[plugins]]
+repo = 'shellRaining/hlchunk.nvim'
+if = 'has("nvim")'
+lua_source = '''
+    require("hlchunk").setup({
+        chunk = {
+            enable = true,
+            chars = {
+                left_top = "┌",
+                left_bottom = "└",
+            },
+            delay = 100,
+        },
+        indent = {
+            enable = true,
+        },
+        line_num = {
+            enable = false,
+        },
+        blank = {
+            enable = false,
+        },
+    })
 '''
 
 [[plugins]]
