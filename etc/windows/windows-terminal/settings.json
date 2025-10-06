@@ -51,10 +51,12 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe --distribution archlinux --cd ~",
+                "guid": "{3a61c38c-6be3-5ffe-b872-784d8e963961}",
                 "hidden": false,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
+                "icon": "C:\\Users\\sota\\.local\\share\\wsl\\archlinux\\shortcut.ico",
+                "name": "Arch Linux",
+                "source": "Microsoft.WSL"
             }
         ]
     },
