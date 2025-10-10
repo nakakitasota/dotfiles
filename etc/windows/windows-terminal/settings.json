@@ -57,6 +57,15 @@
                 "icon": "C:\\Users\\sota\\.local\\share\\wsl\\archlinux\\shortcut.ico",
                 "name": "Arch Linux",
                 "source": "Microsoft.WSL"
+            },
+            {
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe --distribution Ubuntu --cd ~",
+                "guid": "{f8bff303-508e-4133-a473-d87eecb75315}",
+                "hidden": false,
+                "icon": "C:\\Users\\sota\\.local\\share\\wsl\\ubuntu\\shortcut.ico",
+                "name": "Ubuntu",
+                "pathTranslationStyle": "wsl",
+                "suppressApplicationTitle": true
             }
         ]
     },
