@@ -6,7 +6,7 @@
 @define-color urgent_color #a53834;
 
 window#waybar {
-    font-family: "Noto Sans CJK JP", "HackGen Console NF", sans-serif;
+    font-family: "Symbols Nerd Font", "Noto Sans CJK JP", sans-serif;
     font-size: 14px;
     background-color: @bg_color_with_opacity;
     color: @fg_color;
