@@ -1,0 +1,16 @@
+output "Sharp Corporation LQ140N1JW03 Unknown" {
+    mode 1920x1200@59.95
+    scale 1.20
+    alias $FMVUH06002_INTERNAL
+}
+
+output "Eizo Nanao Corporation EV2785 0x02A39D88" {
+    mode 3840x2160@59.99700
+    scale 1.50
+    alias $EV2785_1
+}
+
+profile {
+    output $FMVUH06002_INTERNAL position 2560,0
+    output $EV2785_1 position 0,0
+}
