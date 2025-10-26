@@ -125,7 +125,7 @@
     "custom/media": {
         "format": "{icon} {0}",
         "format-icons": {
-            "default": "󰝚 "
+            "default": "󰝚"
         },
         "escape": true,
         "exec": "playerctl -F metadata --format '{{ trunc(title, 24) }} / {{ trunc(artist, 12) }}'"
