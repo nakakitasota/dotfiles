@@ -10,7 +10,33 @@ output "Eizo Nanao Corporation EV2785 0x02A39D88" {
     alias $EV2785_1
 }
 
+output "Eizo Nanao Corporation EV2785 0x026111F2" {
+    mode 3840x2160@59.99700
+    scale 1.50
+    alias $EV2785_2
+}
+
+output "Eizo Nanao Corporation EV3895 56565013" {
+    mode 3840x1600@59.99400
+    scale 1.00
+    alias $EV3895_1
+}
+
+profile {
+    output $FMVUH06002_INTERNAL position 0,0
+}
+
 profile {
     output $FMVUH06002_INTERNAL position 2560,0
     output $EV2785_1 position 0,0
+}
+
+profile {
+    output $FMVUH06002_INTERNAL position 2560,0
+    output $EV2785_2 position 0,0
+}
+
+profile {
+    output $FMVUH06002_INTERNAL position 3840,0
+    output $EV3895_1 position 0,0
 }
