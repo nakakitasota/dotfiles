@@ -137,6 +137,10 @@ EOF
 '''
 
 [[plugins]]
+repo = 'thinca/vim-quickrun'
+on_cmd = 'QuickRun'
+
+[[plugins]]
 repo = 'mattn/vim-notification'
 if = '!has("nvim")'
 
