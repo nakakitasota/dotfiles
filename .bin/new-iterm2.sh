@@ -18,5 +18,6 @@ tell application id "com.googlecode.iTerm2"
     else
         activate
     end if
+    activate
 end tell
 EOF
