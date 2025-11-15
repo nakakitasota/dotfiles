@@ -2,7 +2,132 @@
     "profiles": [
         {
             "complex_modifications": {
+                "parameters": { "basic.to_if_alone_timeout_milliseconds": 200 },
                 "rules": [
+                    {
+                        "description": "ELECOM M-XT4DRBK Trackball Customization - Button4",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 398,
+                                                "vendor_id": 1390
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {},
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "lazy": true,
+                                        "set_variable": {
+                                            "name": "mb4",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mb4",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "pointing_button": "button4" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 398,
+                                                "vendor_id": 1390
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "mb4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {},
+                                    "pointing_button": "button2"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "ELECOM M-XT4DRBK Trackball Customization - Button5",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 398,
+                                                "vendor_id": 1390
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {},
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fn",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [{ "apple_vendor_keyboard_key_code": "mission_control" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 398,
+                                                "vendor_id": 1390
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": { "mandatory": ["fn"] },
+                                    "pointing_button": "button2"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "Option-Return to open a new iterm window",
                         "manipulators": [
