@@ -5043,7 +5043,9 @@
                                         "key_code": "9",
                                         "modifiers": ["left_shift"],
                                         "repeat": false
-                                    }
+                                    },
+                                    { "key_code": "return_or_enter" },
+                                    { "key_code": "left_arrow" }
                                 ],
                                 "type": "basic"
                             },
