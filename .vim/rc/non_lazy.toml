@@ -16,10 +16,32 @@ hook_add = '''
         set fillchars=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┨,vertright:┣,verthoriz:╋
     endif
 
-    augroup CustomHighlight
+    augroup NightflyCustomHighlight
         autocmd!
         autocmd ColorScheme nightfly highlight clear FloatBorder
         autocmd ColorScheme nightfly highlight link FloatBorder NightflyMalibu
+    augroup END
+'''
+
+[[plugins]]
+repo = 'bluz71/vim-moonfly-colors'
+hook_add = '''
+    let g:moonflyNormalFloat = v:true
+    let g:moonflyWinSeparator = 2
+
+    if !has("gui")
+        let g:moonflyTransparent = 1
+    endif
+
+    if has("nvim")
+        set winborder=single
+        set fillchars=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┨,vertright:┣,verthoriz:╋
+    endif
+
+    augroup MoonflyCustomHighlight
+        autocmd!
+        autocmd ColorScheme moonfly highlight clear FloatBorder
+        autocmd ColorScheme moonfly highlight link FloatBorder MoonflyGrey39
     augroup END
 '''
 
