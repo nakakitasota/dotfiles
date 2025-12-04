@@ -1,6 +1,6 @@
 " hook_add {{{
 let g:lightline = {
-    \ 'colorscheme': 'nightfly',
+    \ 'colorscheme': 'moonfly',
     \ 'mode_map': {'c': 'NORMAL'},
     \ 'active': {
     \     'left': [
