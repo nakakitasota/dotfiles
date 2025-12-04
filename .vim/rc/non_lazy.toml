@@ -2,7 +2,7 @@
 repo = 'vim-denops/denops.vim'
 
 [[plugins]]
-repo = 'bluz71/vim-nightfly-guicolors'
+repo = 'bluz71/vim-nightfly-colors'
 hook_add = '''
     let g:nightflyNormalFloat = v:true
     let g:nightflyWinSeparator = 2
