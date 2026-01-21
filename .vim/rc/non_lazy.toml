@@ -41,7 +41,7 @@ hook_add = '''
     augroup MoonflyCustomHighlight
         autocmd!
         autocmd ColorScheme moonfly highlight clear FloatBorder
-        autocmd ColorScheme moonfly highlight link FloatBorder MoonflyGrey39
+        autocmd ColorScheme moonfly highlight link FloatBorder MoonflyTurquoise
     augroup END
 '''
 
