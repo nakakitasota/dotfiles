@@ -1,7 +1,6 @@
 [tools]
 deno = "latest"
 node = "latest"
-python = "latest"
 usage = "latest"
 
 [settings]
