@@ -22,6 +22,16 @@ output "Eizo Nanao Corporation EV3895 56565013" {
     alias $EV3895_1
 }
 
+output "Iiyama North America PL3288UH 1169630120271" {
+    mode 3840x2160
+    scale 1.20
+    alias $PL3288UH_1
+}
+
+profile {
+    output $PL3288UH_1 position 0,0
+}
+
 profile {
     output $FMVUH06002_INTERNAL position 0,0
 }
