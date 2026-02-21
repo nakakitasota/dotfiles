@@ -46,6 +46,14 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'c9rgreen/vim-colors-modus'
+if = '!has("nvim")'
+
+[[plugins]]
+repo = 'miikanissi/modus-themes.nvim'
+if = 'has("nvim")'
+
+[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
