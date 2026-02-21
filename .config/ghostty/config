@@ -1,0 +1,13 @@
+font-size = 12
+font-family = "UDEV Gothic 35NF"
+
+window-padding-x = 6
+window-padding-y = 6
+window-padding-balance = true
+
+theme = light:modus-operandi,dark:modus-vivendi
+
+cursor-style = block
+cursor-style-blink = false
+
+shell-integration-features = no-cursor
