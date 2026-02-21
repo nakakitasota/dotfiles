@@ -10,6 +10,7 @@ keymap:
         - "Alacritty"
         - "URxvt"
         - "foot"
+        - "com.mitchellh.ghostty"
         - "jetbrains-idea"
         - "jetbrains-studio"
     remap:
