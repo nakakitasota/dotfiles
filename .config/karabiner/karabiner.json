@@ -129,14 +129,14 @@
                         ]
                     },
                     {
-                        "description": "Option-Return to open a new iterm window",
+                        "description": "Option-Return to open a new terminal window",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "return_or_enter",
                                     "modifiers": { "mandatory": ["option"] }
                                 },
-                                "to": [{ "shell_command": "~/.bin/new-iterm2.sh" }],
+                                "to": [{ "shell_command": "~/.bin/new-terminal.sh" }],
                                 "type": "basic"
                             }
                         ]

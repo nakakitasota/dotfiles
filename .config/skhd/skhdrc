@@ -85,4 +85,4 @@ shift + alt - 0x2B : yabai -m window --display prev && yabai -m display --focus 
 shift + alt - 0x2F : yabai -m window --display next && yabai -m display --focus next
 
 # launch apps
-alt - return : bash ~/.bin/new-iterm2.sh
+alt - return : ~/.bin/new-terminal.sh
