@@ -13,13 +13,18 @@ list: ## Show dotfiles in this repo
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 	@$(foreach val, $(XDGFILES), /bin/ls -dF $(val);)
 
-install: dot xdg ## Create symlink to home directory
+install: dot xdg $(shell uname -s) ## Create symlink to home directory
 
 dot:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 xdg:
 	@$(foreach val, $(XDGFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+
+Linux:
+
+Darwin:
+	@ln -sfnv $(abspath .config/ghostty/platforms/config-darwin) $(HOME)/.config/ghostty/config-darwin
 
 clean: ## Remove the dotfiles and this repo
 	@-$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
