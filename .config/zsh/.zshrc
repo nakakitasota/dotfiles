@@ -43,7 +43,11 @@ path=(
 )
 
 # fzf
-export FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp --preview-window sharp"
+FZF_DEFAULT_OPTS="--height 40% --reverse --border sharp --preview-window sharp"
+if [ `~/.bin/get-interfacestyle.sh` = "Light" ]; then
+    FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color light"
+fi
+export FZF_DEFAULT_OPTS
 
 # editor
 if builtin command -v nvim > /dev/null; then
