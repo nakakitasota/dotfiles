@@ -16,3 +16,4 @@ confirm-close-surface = false
 
 # Include platform-specific configs
 config-file = ?config-darwin
+config-file = ?config-local
