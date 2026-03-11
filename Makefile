@@ -22,6 +22,7 @@ xdg:
 	@$(foreach val, $(XDGFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 Linux:
+	@ln -sfnv $(abspath .config/ghostty/platforms/config-linux) $(HOME)/.config/ghostty/config-linux
 
 Darwin:
 	@ln -sfnv $(abspath .config/ghostty/platforms/config-darwin) $(HOME)/.config/ghostty/config-darwin

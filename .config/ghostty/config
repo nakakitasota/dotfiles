@@ -15,5 +15,7 @@ shell-integration-features = no-cursor
 confirm-close-surface = false
 
 # Include platform-specific configs
+config-file = ?config-linux
 config-file = ?config-darwin
+
 config-file = ?config-local
