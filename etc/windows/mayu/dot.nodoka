@@ -19,6 +19,8 @@ key M4-WheelBackward = &WindowMinimize
 key M4-TiltLeft = W-S-Left
 key M4-TiltRight = W-S-Right
 
+key Hiragana = LButton
+
 keymap Global
 key U-FocusChange = &IconColor(0)
 
