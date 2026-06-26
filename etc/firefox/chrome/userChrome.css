@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 :root {
-    --custom-toolbarbutton-outer-padding: var(--toolbarbutton-outer-padding);
+    --custom-toolbarbutton-padding-outer: var(--toolbarbutton-padding-outer);
     --windows-customtitlebar-start-padding: var(--toolbar-start-end-padding);
 
     &[uidensity="compact"] {
-        --custom-toolbarbutton-outer-padding: 0px;
+        --custom-toolbarbutton-padding-outer: 0px;
         --windows-customtitlebar-start-padding: 4px;
     }
 }
@@ -68,7 +68,7 @@
 
 #main-window[uidensity="compact"] #nav-bar {
     height: 27px !important;
-    --toolbarbutton-inner-padding: 4px !important;
+    --toolbarbutton-padding-inner: 4px !important;
 
     toolbarbutton.bookmark-item,
     .toolbaritem-combined-buttons {
@@ -77,7 +77,7 @@
 
     .toolbarbutton-1 {
         overflow: visible !important;
-        --toolbarbutton-outer-padding: var(--custom-toolbarbutton-outer-padding) !important;
+        --toolbarbutton-padding-outer: var(--custom-toolbarbutton-padding-outer) !important;
     }
 }
 
@@ -90,8 +90,8 @@
 (-moz-pref("browser.tabs.inTitlebar", 1)) and
 (-moz-pref("sidebar.verticalTabs")) {
     #nav-bar {
-        padding-left: calc(var(--windows-customtitlebar-start-padding) + 2 * var(--custom-toolbarbutton-outer-padding) + 2 * var(--toolbarbutton-inner-padding) + 16px) !important;
-        background-position: left calc(var(--custom-toolbarbutton-outer-padding) + var(--toolbarbutton-inner-padding) + var(--windows-customtitlebar-start-padding)) center;
+        padding-left: calc(var(--windows-customtitlebar-start-padding) + 2 * var(--custom-toolbarbutton-padding-outer) + 2 * var(--toolbarbutton-padding-inner) + 16px) !important;
+        background-position: left calc(var(--custom-toolbarbutton-padding-outer) + var(--toolbarbutton-padding-inner) + var(--windows-customtitlebar-start-padding)) center;
         background-repeat: no-repeat;
         background-image: url("chrome://branding/content/icon32.png") !important;
         background-size: 16px;
