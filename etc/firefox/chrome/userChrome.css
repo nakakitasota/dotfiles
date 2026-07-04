@@ -144,6 +144,6 @@
 (-moz-pref("browser.tabs.inTitlebar", 1)) and
 (-moz-pref("sidebar.verticalTabs")) {
     #main-window .titlebar-buttonbox-container{
-        padding-right: var(--toolbar-start-end-padding) !important;
+        padding-right: var(--toolbar-padding-inline) !important;
     }
 }
