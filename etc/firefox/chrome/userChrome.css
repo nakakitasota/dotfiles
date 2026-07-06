@@ -61,7 +61,8 @@
 }
 
 /* ナビゲーションバー */
-#navigator-toolbox:-moz-window-inactive {
+toolbar:-moz-window-inactive > *,
+#urlbar:-moz-window-inactive {
     opacity: 0.5;
     filter: grayscale(100%);
 }
