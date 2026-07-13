@@ -34,7 +34,7 @@ key IC-M0-L = C-L
 key IC-M0-Left = C-Left
 key IC-M0-Right = C-Right
 key IC-M0-A = C-A
-key IC-M0-W = C-W
+key IC-M0-W = End # Open ATOK Integrated Dictionary
 
 #
 # Super key
