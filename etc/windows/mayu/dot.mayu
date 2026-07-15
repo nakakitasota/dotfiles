@@ -51,6 +51,8 @@ key W-C-S-LAlt = &VK(0x07)
 key W-C-S-RAlt = &VK(0x07)
 key C-S-A-LWin = &VK(0x07)
 key C-S-A-RWin = &VK(0x07)
+# Lock workstation
+key W-C-S-A-l = &VK(0x07) &Sync W-L
 
 #
 # komorebi tiling window manager
