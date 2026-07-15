@@ -37,6 +37,15 @@ function Install-Etc {
     New-Item -ItemType SymbolicLink -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState -Value $DOTPATH\etc\windows\windows-terminal\settings.json -Name settings.json -Force
 }
 
+function Add-Path([string]$Path) {
+    $currentPath = [Environment]::GetEnvironmentVariable('Path', 'User')
+    if (-not ($currentPath.Contains($Path))) {
+        $newPath = $currentPath + ";" + $Path
+        [Environment]::SetEnvironmentVariable('Path', $newPath, 'User')
+        Write-Host "Added Path to $Path"
+    }
+}
+
 function Set-EnvironmentVariables {
     [Environment]::SetEnvironmentVariable("XDG_CONFIG_HOME", "${HOME}\.config", "User")
     [Environment]::SetEnvironmentVariable("XDG_CACHE_HOME", "${HOME}\.cache", "User")
@@ -44,16 +53,14 @@ function Set-EnvironmentVariables {
     [Environment]::SetEnvironmentVariable("XDG_STATE_HOME", "${HOME}\.local\state", "User")
     [Environment]::SetEnvironmentVariable("GIT_SSH", "C:\Windows\System32\OpenSSH\ssh.exe", "User")
 
-    $currentPath = [Environment]::GetEnvironmentVariable('Path', 'User')
     $xdgDataPath = [Environment]::GetEnvironmentVariable('XDG_DATA_HOME', 'User')
+
+    # Add path to ~/.bin
+    Add-Path("$env:USERPROFILE\.bin")
 
     # Add path to mise shims
     $miseShimPath = "$xdgDataPath\mise\shims"
-    if (-not ($currentPath.Contains($miseShimPath))) {
-        $newPath = $currentPath + ";" + $miseShimPath
-        [Environment]::SetEnvironmentVariable('Path', $newPath, 'User')
-        Write-Host "Added"
-    }
+    Add-Path($miseShimPath)
 }
 
 Install-Dotfiles
