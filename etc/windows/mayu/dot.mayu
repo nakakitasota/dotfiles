@@ -42,6 +42,15 @@ key U-*LWin = &Ignore
 key W-Enter = &ShellExecute("open", "wt",,, ShowNormal)
 # Open start menu
 key W-Space = C-Esc
+# Block Microsoft 365 hotkey
+key W-S-A-LControl = &VK(0x07)
+key W-S-A-RControl = &VK(0x07)
+key W-C-A-LShift = &VK(0x07)
+key W-C-A-RShift = &VK(0x07)
+key W-C-S-LAlt = &VK(0x07)
+key W-C-S-RAlt = &VK(0x07)
+key C-S-A-LWin = &VK(0x07)
+key C-S-A-RWin = &VK(0x07)
 
 #
 # komorebi tiling window manager
