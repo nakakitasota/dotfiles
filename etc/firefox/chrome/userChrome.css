@@ -28,7 +28,7 @@
 
 /* サイドバー */
 #main-window:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])) {
-    #sidebar-main {
+    #sidebar-container {
         visibility: collapse;
     }
 
