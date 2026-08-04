@@ -2,3 +2,5 @@
 	name = Sota Nakakita
 [init]
 	defaultBranch = main
+[core]
+	commentChar = ";"
