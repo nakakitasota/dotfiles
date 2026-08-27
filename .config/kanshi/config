@@ -28,6 +28,12 @@ output "Iiyama North America PL3288UH 1169630120271" {
     alias $PL3288UH_1
 }
 
+output "Toshiba America Info Systems Inc DIGITAL-TV 0x01010101" {
+    mode 3840x2160
+    scale 1.25
+    alias $KusodekaTV
+}
+
 profile {
     output $PL3288UH_1 position 0,0
 }
@@ -49,4 +55,9 @@ profile {
 profile {
     output $FMVUH06002_INTERNAL position 0,0
     output $EV3895_1 position -3840,0
+}
+
+profile {
+    output $EV3895_1 position 0,0
+    output $KusodekaTV position 3840,0
 }
