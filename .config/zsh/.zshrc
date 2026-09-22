@@ -200,7 +200,7 @@ function mkcd() {
 
 function chpwd() {
     if builtin command -v eza > /dev/null; then
-        eza --icons -l
+        eza --icons auto -l
     else
         case ${OSTYPE} in
             darwin*)
@@ -233,14 +233,14 @@ function finder-cdr() {
     lf=${lf%_}
     local target_dir=$(cdr -l \
         | sed -e 's/^[[:digit:]]*[[:blank:]]*//' -e "s:^~:$HOME:" -e "1s:^:${HOME}${lf}:" \
-        | fzf --prompt="Directory> " --preview "eza --icons -a -T -L 1 {}")
+        | fzf --prompt="Directory> " --preview "eza --icons auto -a -T -L 1 {}")
     if [ -n "$target_dir" ]; then
         builtin cd $target_dir
     fi
 }
 
 function finder-repos() {
-    local src=$(ghq list | fzf --prompt="Repository> " --preview "eza --icons -a -T -L 1 $(ghq root)/{}")
+    local src=$(ghq list | fzf --prompt="Repository> " --preview "eza --icons auto -a -T -L 1 $(ghq root)/{}")
     if [ -n "$src" ]; then
         BUFFER="cd $(ghq root)/$src"
         zle accept-line
@@ -286,11 +286,11 @@ alias diff='diff -U1'
 alias rgh='rg --hidden'
 
 if builtin command -v eza > /dev/null; then
-    alias ls='eza --icons'
-    alias ll='eza --icons -l'
-    alias la='eza --icons -al'
-    alias lt='eza --icons --sort newest -l'
-    alias lat='eza --icons --sort newest -al'
+    alias ls='eza --icons auto'
+    alias ll='eza --icons auto -l'
+    alias la='eza --icons auto -al'
+    alias lt='eza --icons auto --sort newest -l'
+    alias lat='eza --icons auto --sort newest -al'
 else
     case ${OSTYPE} in
         darwin*)
