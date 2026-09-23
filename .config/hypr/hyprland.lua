@@ -165,6 +165,16 @@ hl.config({
     }
 })
 
+-- hyprbars
+hl.config({
+    plugin = {
+        hyprbars = {
+            bar_height = 20,
+            on_double_click = "hyprctl dispatch fullscreen 1",
+        },
+    },
+})
+
 -- Window rules
 hl.window_rule({ match = { class = "Bitwarden" }, float = true })
 
