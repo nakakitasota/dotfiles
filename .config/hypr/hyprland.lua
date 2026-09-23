@@ -20,6 +20,7 @@ end
 
 local autostart_once = function()
     -- Execute apps at launch
+    hl.exec_cmd("hyprpm reload -n")
     hl.exec_cmd("kanshi")
     hl.exec_cmd("waybar --config ~/.config/waybar/config")
     hl.exec_cmd("waytrogen --restore")
