@@ -175,6 +175,8 @@ hl.config({
     },
 })
 
+hl.window_rule({ match = { float = false }, ["hyprbars:no_bar"] = true })
+
 -- Window rules
 hl.window_rule({ match = { class = "Bitwarden" }, float = true })
 
