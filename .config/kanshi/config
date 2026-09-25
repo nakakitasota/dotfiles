@@ -63,5 +63,9 @@ profile {
 }
 
 profile {
+    output $EV3895_1 position 0,0
+}
+
+profile {
     output $KusodekaTV position 3840,0
 }
