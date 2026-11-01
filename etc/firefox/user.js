@@ -37,6 +37,7 @@ user_pref("browser.ctrlTab.previews", false); // Ctrl-Tabのプレビューを�
 user_pref("browser.ctrlTab.recentlyUsedOrder", false); // Ctrl-Tabで次のタブに切り替える（最近使用したタブに切り替えない）
 user_pref("ui.prefersReducedMotion", 0); // Fx80以降でアニメーション効果を削除しない
 user_pref("signon.rememberSignons", false) // Disable "Ask to save passwords"
+user_pref("extensions.formautofill.creditCards.enabled", false); // Disable "Save and autofill payment info"
 
 // テレメトリ無効化
 user_pref("datareporting.healthreport.logging.consoleEnabled", false);
