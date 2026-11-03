@@ -46,7 +46,7 @@
             transition: all 300ms 30ms ease !important;
 
             &:not(:hover) {
-                width: var(--space-small) !important;
+                width: var(--space-xxsmall) !important;
             }
         }
     }
