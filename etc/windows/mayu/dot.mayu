@@ -41,7 +41,7 @@ key IC-M0-W = End # Open ATOK Integrated Dictionary
 key U-*LWin = &Ignore
 key W-Enter = &ShellExecute("open", "wt",,, ShowNormal)
 # Open start menu
-key W-Space = C-Esc
+key W-Space = &SetImeStatus(off) &Sync C-Esc
 # Block Microsoft 365 hotkey
 key W-S-A-LControl = &VK(0x07)
 key W-S-A-RControl = &VK(0x07)
