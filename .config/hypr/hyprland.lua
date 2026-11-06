@@ -215,10 +215,10 @@ hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true }) -- left click
 
 -- Resize windows
-hl.bind(mainMod .. " + ALT + H",   hl.dsp.window.resize({ x = -32, y = 0   }))
-hl.bind(mainMod .. " + ALT + J",   hl.dsp.window.resize({ x = 0,   y = -32 }))
-hl.bind(mainMod .. " + ALT + K",   hl.dsp.window.resize({ x = 0,   y = -32 }))
-hl.bind(mainMod .. " + ALT + L",   hl.dsp.window.resize({ x = 32,  y = 0   }))
+hl.bind(mainMod .. " + ALT + H",   hl.dsp.window.resize({ x = -32, y = 0,   relative = true }))
+hl.bind(mainMod .. " + ALT + J",   hl.dsp.window.resize({ x = 0,   y = 32,  relative = true }))
+hl.bind(mainMod .. " + ALT + K",   hl.dsp.window.resize({ x = 0,   y = -32, relative = true }))
+hl.bind(mainMod .. " + ALT + L",   hl.dsp.window.resize({ x = 32,  y = 0,   relative = true }))
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true }) -- right click
 
 -- Switch workspaces with mainMod + [0-9]
