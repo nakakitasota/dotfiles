@@ -8,10 +8,18 @@
 window#waybar {
     font-family: "Symbols Nerd Font", "Noto Sans CJK JP", sans-serif;
     font-size: 14px;
-    background-color: @bg_color_with_opacity;
+    background-color: transparent;
     color: @fg_color;
     transition-property: background-color;
     transition-duration: .5s;
+}
+
+window#waybar > box {
+    background-color: @bg_color_with_opacity;
+    /*
+    margin: 0 0 2px 0;
+    box-shadow: 0 0 2px 0 @bg_color_with_opacity;
+    */
 }
 
 #workspaces * {
