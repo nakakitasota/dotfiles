@@ -1,3 +1,5 @@
+notifications: true
+
 modmap:
   - name: Global
     remap:
