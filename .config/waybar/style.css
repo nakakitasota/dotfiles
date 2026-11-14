@@ -6,7 +6,7 @@
 @define-color urgent_color #a53834;
 
 window#waybar {
-    font-family: "Symbols Nerd Font", "Noto Sans CJK JP", sans-serif;
+    font-family: "Symbols Nerd Font", sans-serif;
     font-size: 14px;
     background-color: transparent;
     color: @fg_color;
