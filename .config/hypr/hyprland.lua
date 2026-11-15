@@ -172,6 +172,7 @@ hl.config({
     plugin = {
         hyprbars = {
             bar_height = 26,
+            bar_text_font = "system-ui",
             bar_text_size = 14,
             bar_blur = true,
             bar_precedence_over_border = true,
