@@ -25,7 +25,6 @@ entry {
 
 window {
     margin: 0px;
-    border-radius: 4px;
     background-color: @bg_color_with_opacity;
 }
 
@@ -35,7 +34,6 @@ window {
     border: none;
     color: @fg_color;
     background: none;
-    border-radius: 4px;
 }
 
 /* search icon */
@@ -63,7 +61,6 @@ window {
 
 #entry {
     padding: 8px 16px;
-    border-radius: 4px;
 }
 
 #entry:selected {
