@@ -22,14 +22,21 @@ window#waybar > box {
     */
 }
 
+.modules-left {
+    margin-left: 12px;
+    margin-right: 128px;
+}
+
+.modules-right {
+    margin-right: 12px;
+}
+
 #workspaces * {
     all: unset;
 }
 
 #workspaces {
     font-family: Roboto;
-    padding-left: 12px;
-    margin: 0 4px;
 }
 
 #workspaces button {
@@ -85,14 +92,6 @@ window#waybar > box {
     margin: 0 6px 2px 6px;
 }
 
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-.modules-left > widget:last-child > #window {
-    padding-right: 128px;
-}
-
 #custom-media {
     margin-right: 10px;
 }
@@ -131,10 +130,6 @@ window#waybar > box {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#tray {
-    padding: 0 12px 0 0;
 }
 
 #tray > .passive {
