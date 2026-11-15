@@ -143,7 +143,6 @@ hl.animation({ leaf = "workspacesIn",  enabled = true, speed = 1.21, bezier = "a
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
 
 hl.layer_rule({ match = { namespace = "waybar"        }, blur = true, xray = true })
-hl.layer_rule({ match = { namespace = "wofi"          }, blur = true, ignore_alpha = 0, no_anim = true })
 hl.layer_rule({ match = { namespace = "notifications" }, blur = true, ignore_alpha = 0, xray = true })
 hl.layer_rule({ match = { namespace = "avizo"         }, blur = true, ignore_alpha = 0 })
 
@@ -182,16 +181,17 @@ hl.config({
 })
 
 hl.window_rule({ match = { float = false }, ["hyprbars:no_bar"] = true })
+hl.window_rule({ match = { class = "wofi" }, ["hyprbars:no_bar"] = true })
 
 -- Window rules
 hl.window_rule({ match = { class = "Bitwarden" }, float = true })
-
+hl.window_rule({ match = { class = "wofi" }, no_anim = true })
 
 -- Key Bindings
 local mainMod = "SUPER"
 
 -- Launch apps
-hl.bind(mainMod .. " + SPACE",                  hl.dsp.exec_cmd("wofi --show drun"))
+hl.bind(mainMod .. " + SPACE",                  hl.dsp.exec_cmd("wofi --show drun --normal-window"))
 hl.bind(mainMod .. " + RETURN",                 hl.dsp.exec_cmd("ghostty"))
 hl.bind(mainMod .. " + CTRL + ALT + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 
