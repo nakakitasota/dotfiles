@@ -1,5 +1,6 @@
 background-color=#1b222480
 border-size=0
 default-timeout=10000
+margin=0
 padding=16
 font=system-ui 10
