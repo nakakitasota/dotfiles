@@ -7,7 +7,7 @@
 
 * {
     font-family: system-ui;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 undershoot.top,
@@ -69,4 +69,5 @@ window {
 #entry:selected {
     background: @bg_color_selected;
     outline: none;
+    font-weight: bold;
 }
