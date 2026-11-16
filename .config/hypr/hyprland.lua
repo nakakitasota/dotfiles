@@ -185,6 +185,7 @@ hl.window_rule({ match = { class = "wofi" }, ["hyprbars:no_bar"] = true })
 
 -- Window rules
 hl.window_rule({ match = { class = "Bitwarden" }, float = true })
+hl.window_rule({ match = { class = "org.pulseaudio.pavucontrol" }, float = true })
 hl.window_rule({ match = { class = "wofi" }, no_anim = true })
 
 -- Key Bindings
