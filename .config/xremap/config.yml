@@ -1,11 +1,27 @@
 notifications: true
+virtual_modifiers:
+  - BTN_SIDE   # Called 'XButton1' in nodoka, 'button4' in Karabiner-Elements
+  - BTN_EXTRA  # Called 'XButton2' in nodoka, 'button5' in Karabiner-Elements
 
 modmap:
   - name: Global
     remap:
       CapsLock: Ctrl_R
+      BTN_SIDE:
+        alone: [ALT_L, Left]
+        held: BTN_SIDE
 
 keymap:
+  - name: Global
+    remap:
+      BTN_SIDE-BTN_RIGHT: C-w
+      BTN_SIDE-XUPSCROLL: C-S-Tab
+      BTN_SIDE-XDOWNSCROLL: C-Tab
+      BTN_SIDE-XLEFTSCROLL: A-Left
+      BTN_SIDE-XRIGHTSCROLL: A-Right
+
+      BTN_EXTRA-BTN_RIGHT: W-q
+
   - name: Emacs
     application:
       not:
